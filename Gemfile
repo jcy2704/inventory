@@ -7,9 +7,6 @@ ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
-# For authentication
-gem 'devise'
-
 # Use pg as the database for Active Record
 gem 'pg'
 # Use Puma as the app server
@@ -50,7 +47,6 @@ end
 group :development, :test do
   gem 'database_cleaner'
   gem 'rspec-rails'
-  gem 'sqlite3'
 end
 
 group :test do
