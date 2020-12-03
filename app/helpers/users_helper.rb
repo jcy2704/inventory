@@ -7,4 +7,8 @@ module UsersHelper
   def user_params
     params.require(:user).permit(:username, :role)
   end
+
+  def errors_s(user)
+    user.errors.full_messages.each(&:to_s)
+  end
 end

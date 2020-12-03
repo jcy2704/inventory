@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :users
 
-  get '/sign_in', to: 'users#sign_in'
-  post '/sign_in', to: 'users#new_sign_in'
-  get '/sign_out', to: 'users#sign_out'
+  get '/register', to: 'users#new'
+  get '/login', to: 'users#login'
+  post '/login', to: 'users#new_login'
+  get '/logout', to: 'users#logout'
 end

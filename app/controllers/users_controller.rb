@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
   include UsersHelper
+  def index
+    exists?
+
+    redirect_to login_path unless logged_in?
+  end
 
   def new
     if logged_in?
@@ -12,31 +17,31 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-
     if @user.save
       new_current_user(@user)
-      redirect_to users_path
+      redirect_to users_path, notice: "Welcome, #{@user.username.capitalize}"
     else
-      render :new
+      redirect_to new_user_path, alert: "#{errors_s(@user)[0]} #{errors_s(@user)[1]}"
     end
   end
 
-  def sign_in
-    redirect_to users_path if current_user
+  def login
+    exists?
+    redirect_to users_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
   end
 
-  def new_sign_in
+  def new_login
     @user = User.find_by(username: params[:username])
     if @user.nil?
-      redirect_to sign_in_path, notice: 'User does not exists.'
+      redirect_to login_path, alert: 'User does not exists.'
     else
       new_current_user(@user)
-      redirect_to users_path
+      redirect_to users_path, notice: 'Logged In Successfully.'
     end
   end
 
-  def sign_out
+  def logout
     reset_session
-    redirect_to sign_in_path
+    redirect_to login_path, notice: 'Logged Out Successfully'
   end
 end
