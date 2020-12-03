@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :users
+  resources :products
 
   get '/register', to: 'users#new'
   get '/login', to: 'users#login'
