@@ -3,9 +3,7 @@
 class UsersController < ApplicationController
   include UsersHelper
   def index
-    exists?
-
-    redirect_to login_path unless logged_in?
+    redirect_to login_path unless logged_in? && exists?
   end
 
   def new
