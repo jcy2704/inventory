@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.role.downcase!
+
     if @user.save
       new_current_user(@user)
       redirect_to users_path, notice: "Welcome, #{@user.username.capitalize}"

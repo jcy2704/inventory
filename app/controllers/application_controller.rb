@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   end
 
   def exists?
-    reset_session if current_user && User.find_by(id: session[:current_user]['id']).nil?
+    reset_session if session[:current_user] && User.find_by(id: session[:current_user]['id']).nil?
   end
 end
