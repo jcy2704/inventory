@@ -28,6 +28,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    exists?
+    redirect_to users_path unless logged_in? && current_user.role == 'admin'
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    @user.role.downcase!
+    if @user.save && @user == current_user
+      new_current_user(@user)
+      redirect_to users_path
+    elsif @user.save
+      redirect_to users_path
+    end
+  end
+
   def login
     exists?
     redirect_to users_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
