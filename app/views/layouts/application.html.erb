@@ -10,8 +10,28 @@
   </head>
 
   <body>
+    <header class="header">
+      <nav class="navbar">
+        <ul class="nav-left">
+            <%= link_to  'All Users', users_path if session[:current_user] && current_user.admin? %>
+            <%= link_to 'Transactions', users_path %>
+            <%= link_to  'Products', products_path %>
+            <%= link_to 'Groups', groups_path %>
+        </ul>
+        <ul class="nav-right">
+          <% if logged_in? %>
+            <%= link_to current_user.username.capitalize , user_path(current_user.id) %>
+            <%= link_to  'Logout', logout_path %>
+          <% else %>
+            <%= link_to  'Login', login_path %>
+            <%= link_to  'Register', new_user_path %>
+          <% end %>
+        </ul>
+      </nav>
+    </header>
+    <main>
     <%= yield %>
-
+    </main>
     <% unless flash.empty? %>
       <script type="text/javascript">
         <% flash.each do |f| %>

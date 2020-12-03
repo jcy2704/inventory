@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     redirect_if_not_logged
-    @groups = Groups.all
+    @groups = Group.all
   end
 
   def new
