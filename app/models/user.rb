@@ -5,6 +5,8 @@ class User < ApplicationRecord
   validates :role, presence: true, inclusion: { in: %w[admin employee] }
   before_save :downcase_field
 
+  has_one_attached :avatar
+
   def downcase_field
     username.downcase!
   end

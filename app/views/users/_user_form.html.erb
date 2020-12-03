@@ -1,0 +1,12 @@
+<%= form_for @user do |f| %>
+  <%= f.label :username, 'Username' %>
+  <%= f.text_field :username %>
+  <%= f.label :role, 'Role' %>
+  <%= f.select :role, %w[Admin Employee], include_blank: '' %>
+  <%= f.label :avatar, 'Avatar' %>
+  <% if @user.avatar.attached? %>
+    <%= image_tag  @user.avatar, style: 'width: 200px;' %>
+  <% end %>
+  <%= f.file_field :avatar %>
+  <%= f.submit 'Register' %>
+<% end %>
