@@ -1,11 +1,7 @@
-# rubocop:disable Layout/LineLength
-
 class UsersController < ApplicationController
   include UsersHelper
   def index
-    exists?
-
-    redirect_to login_path unless logged_in?
+    redirect_if_not_logged
   end
 
   def new
@@ -24,13 +20,14 @@ class UsersController < ApplicationController
       new_current_user(@user)
       redirect_to products_path, notice: "Welcome, #{@user.username.capitalize}"
     else
-      redirect_to new_user_path, alert: "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
+      flash.now[:alert] = "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
+      render :new
     end
   end
 
   def edit
     exists?
-    redirect_to products_path unless logged_in? && current_user.role == 'admin'
+    redirect_to products_path unless logged_in? && current_user.admin?
     @user = User.find(params[:id])
   end
 
@@ -66,5 +63,3 @@ class UsersController < ApplicationController
     redirect_to login_path, notice: 'Logged Out Successfully'
   end
 end
-
-# rubocop:enable Layout/LineLength

@@ -2,17 +2,13 @@ class ProductsController < ApplicationController
   include ProductsHelper
 
   def index
-    exists?
-    redirect_to login_path unless logged_in?
+    redirect_if_not_logged
     @products = Product.all
   end
 
   def new
-    if logged_in?
-      @product = Product.new
-    else
-      redirect_to login_path
-    end
+    redirect_if_not_logged
+    @product = Product.new
   end
 
   def create
@@ -26,7 +22,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    exists?
+    redirect_if_not_logged
     @product = Product.find(params[:id])
   end
 end
