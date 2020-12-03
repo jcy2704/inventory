@@ -11,4 +11,8 @@ module UsersHelper
   def errors_s(user)
     user.errors.full_messages.each(&:to_s)
   end
+
+  def break_the_lines(text)
+    text.to_s.gsub(/\n/, '<br/>')
+  end
 end

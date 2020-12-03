@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   def downcase_field
     username.downcase!
+    role.downcase!
   end
 end
 

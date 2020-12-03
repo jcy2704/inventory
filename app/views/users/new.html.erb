@@ -3,6 +3,7 @@
 <%= form_for @user do |f| %>
   <%= f.label :username, 'Username' %>
   <%= f.text_field :username %>
-  <%= f.select :role, %w[admin user] %>
+  <%= f.label :role, 'Role' %>
+  <%= f.select :role, %w[Admin User], include_blank: '' %>
   <%= f.submit 'Register' %>
 <% end %>

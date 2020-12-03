@@ -1,3 +1,5 @@
+# rubocop:disable Layout/LineLength
+
 class UsersController < ApplicationController
   include UsersHelper
   def index
@@ -21,7 +23,7 @@ class UsersController < ApplicationController
       new_current_user(@user)
       redirect_to users_path, notice: "Welcome, #{@user.username.capitalize}"
     else
-      redirect_to new_user_path, alert: "#{errors_s(@user)[0]} #{errors_s(@user)[1]}"
+      redirect_to new_user_path, alert: "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
     end
   end
 
@@ -45,3 +47,5 @@ class UsersController < ApplicationController
     redirect_to login_path, notice: 'Logged Out Successfully'
   end
 end
+
+# rubocop:enable Layout/LineLength
