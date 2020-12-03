@@ -2,8 +2,8 @@ class CreateUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :users do |t|
       t.string :username
-      t.string :role, null: false, default: 'user',
-               inclusion: { in: ['admin', 'user'] }
+      t.string :role, null: false, default: 'employee',
+               inclusion: { in: ['admin', 'employee'] }
 
       t.timestamps
     end
