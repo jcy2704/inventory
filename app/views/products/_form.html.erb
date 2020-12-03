@@ -1,0 +1,15 @@
+<%= form_for @product do |p| %>
+  <%= p.label :name, 'Product Name', class: 'p-name' %>
+  <%= p.text_field :name, class: 'p-name-input' %>
+  <%= p.label :price, class: 'price' %>
+  <%= p.number_field :price, min: 0, class: 'price-input' %>
+  <%= p.label :quantity, class: 'quantity' %>
+  <%= p.number_field :quantity, step: 1, min: 0, class: 'quantity-input' %>
+  <%= p.label :upc, 'Universal Product Code (UPC)' %>
+  <%= p.number_field :upc, min: 100000000000, max: 999999999999, class: 'upc-input' %>
+  <%= p.submit %>
+
+  <% @product.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+<% end %>

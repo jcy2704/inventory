@@ -2,7 +2,8 @@ class ProductsController < ApplicationController
   include ProductsHelper
 
   def index
-    redirect to login_path unless exists? && logged_in?
+    exists?
+    redirect_to login_path unless logged_in?
     @products = Product.all
   end
 

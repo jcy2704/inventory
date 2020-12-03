@@ -3,12 +3,14 @@
 class UsersController < ApplicationController
   include UsersHelper
   def index
-    redirect_to login_path unless logged_in? && exists?
+    exists?
+
+    redirect_to login_path unless logged_in?
   end
 
   def new
     if logged_in?
-      redirect_to users_path
+      redirect_to products_path
     else
       @user = User.new
     end
@@ -20,7 +22,7 @@ class UsersController < ApplicationController
 
     if @user.save
       new_current_user(@user)
-      redirect_to users_path, notice: "Welcome, #{@user.username.capitalize}"
+      redirect_to products_path, notice: "Welcome, #{@user.username.capitalize}"
     else
       redirect_to new_user_path, alert: "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
     end
@@ -28,7 +30,7 @@ class UsersController < ApplicationController
 
   def edit
     exists?
-    redirect_to users_path unless logged_in? && current_user.role == 'admin'
+    redirect_to products_path unless logged_in? && current_user.role == 'admin'
     @user = User.find(params[:id])
   end
 
@@ -38,15 +40,15 @@ class UsersController < ApplicationController
     @user.role.downcase!
     if @user.save && @user == current_user
       new_current_user(@user)
-      redirect_to users_path
+      redirect_to products_path
     elsif @user.save
-      redirect_to users_path
+      redirect_to products_path
     end
   end
 
   def login
     exists?
-    redirect_to users_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
+    redirect_to products_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
   end
 
   def new_login
@@ -55,7 +57,7 @@ class UsersController < ApplicationController
       redirect_to login_path, alert: 'User does not exists.'
     else
       new_current_user(@user)
-      redirect_to users_path, notice: 'Logged In Successfully.'
+      redirect_to products_path, notice: 'Logged In Successfully.'
     end
   end
 

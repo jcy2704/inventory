@@ -1,0 +1,13 @@
+<h1 class="title">All Products</h1>
+<% @products.each do |p| %>
+  <%= label_tag 'Product Name: ' %>
+  <%= p.name %>
+  <%= label_tag 'Price: ' %>
+  <%= number_to_currency(p.price) %>
+  <%= label_tag 'Quantity: ' %>
+  <%= p.quantity %>
+  <% if !p.upc.nil? %>
+    <%= label_tag 'UPC: ' %>
+    <%= p.upc %>
+  <% end %>
+<% end %>

@@ -1,3 +1,4 @@
 <%= current_user.id %>
-
-<%= image_tag current_user.avatar, style: 'width: 200px;' %>
+<% if current_user.avatar.attached? %>
+  <%= image_tag current_user.avatar, style: 'width: 200px;' %>
+<% end %>
