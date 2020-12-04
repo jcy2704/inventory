@@ -1,11 +1,9 @@
 module ApplicationHelper
-  def nav_right
-    if logged_in?
-      content_tag(:li, (link_to current_user.username, user_path(current_user.id)), class: 'my-user')
-      content_tag(:li, (link_to 'Logout', logout_path), class: 'logout')
+  def avatar_attached
+    if current_user.avatar.attached?
+      image_tag current_user.avatar, class: 'avatar'
     else
-      content_tag(:li, (link_to 'Login', login_path), class: 'login')
-      content_tag(:li, (link_to 'Register', register_path), class: 'register')
+      image_tag 'default.jpg', class: 'avatar'
     end
   end
 end

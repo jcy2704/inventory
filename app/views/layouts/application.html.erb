@@ -23,11 +23,9 @@
         <div class="nav-right">
           <% if logged_in? %>
             <div class="profile">
-              <% if current_user.avatar.attached? %>
-                <a href=<%= user_path(current_user.id) %>>
-                <%= image_tag current_user.avatar, class: 'avatar' %>
-                </a>
-              <% end %>
+              <a href=<%= user_path(current_user.id) %>>
+                <%= avatar_attached %>
+              </a>
               <%= link_to current_user.username.capitalize , user_path(current_user.id) %>
             </div>
             <%= link_to 'Logout', logout_path %>

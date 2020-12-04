@@ -62,4 +62,11 @@ class UsersController < ApplicationController
     reset_session
     redirect_to login_path, notice: 'Logged Out Successfully'
   end
+
+  def remove_avatar
+    image = current_user.avatar
+    image.purge
+
+    redirect_to :back
+  end
 end

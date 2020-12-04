@@ -1,6 +1,9 @@
 <%= form_for @user, html: { class: 'register-form' } do |f| %>
   <% if @user.avatar.attached? %>
     <%= image_tag  @user.avatar, class: 'avatar-big' %>
+    <%= link_to  "Remove", remove_avatar_path, method: :delete %>
+  <% else %>
+    <%= image_tag  'default.jpg', class: 'avatar-big' %>
   <% end %>
   <%= f.label :username, 'Username', class: 'username-label' %>
   <%= f.text_field :username, class: 'username' %>
