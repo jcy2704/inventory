@@ -6,4 +6,8 @@ module ApplicationHelper
       image_tag 'default.jpg', class: 'avatar'
     end
   end
+
+  def errors_s(entity)
+    entity.errors.full_messages.each(&:to_s)
+  end
 end

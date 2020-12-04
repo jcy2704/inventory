@@ -1,20 +1,16 @@
 <%= form_for @product, html: { class: 'new_product' } do |p| %>
-  <%= p.label :name, 'Product Name', class: 'name-label' %>
+  <%= p.label :name, 'Product Name', class: 'label' %>
   <%= p.text_field :name, class: 'name' %>
-  <%= p.label :price, class: 'price-label' %>
+  <%= p.label :price, class: 'label' %>
   <%= p.number_field :price, min: 0, step: 0.01, class: 'price' %>
-  <%= p.label :quantity, class: 'quantity-label' %>
+  <%= p.label :quantity, class: 'label' %>
   <%= p.number_field :quantity, step: 1, min: 0, class: 'quantity' %>
-  <%= p.label :upc, 'Universal Product Code (UPC)', class: 'upc-label' %>
+  <%= p.label :upc, 'Universal Product Code (UPC)', class: 'label' %>
   <%= p.number_field :upc, min: 100000000000, max: 999999999999, class: 'upc' %>
-  <% if @groups.nil? %>
-    <%= link_to  "Create Group", new_group_path, class: 'name-label' %>
-  <% else %>
-    <%= p.select :group_id, options_for_select(@groups.collect{ |group| [group.name, group.id] }, @group), include_blank: '' %>
+  <% if !Group.nil? %>
+    <%= p.label :group_id, 'Group', class: 'label' %>
+    <%= p.select :group_id, options_for_select(Group.all.collect{ |group| [group.name, group.id] }, @product.group), include_blank: '' %>
   <% end %>
+  <%= link_to  "Create Group", new_group_path, class: 'create-group' %>
   <%= p.submit %>
-
-  <% @product.errors.full_messages.each do |error| %>
-    <li><%= error %></li>
-  <% end %>
 <% end %>

@@ -8,7 +8,6 @@
 
 <% @products.each do |p| %>
   <div>
-    <%= label_tag 'Product Name: ' %>
     <%= p.name %>
     <%= label_tag 'Price: ' %>
     <%= number_to_currency(p.price) %>
@@ -18,5 +17,7 @@
       <%= label_tag 'UPC: ' %>
       <%= p.upc %>
     <% end %>
+    <%= label_tag 'Group: ' %>
+    <%= p.group.name %>
   </div>
 <% end %>

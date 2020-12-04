@@ -6,7 +6,12 @@
   display: flex;
   flex-direction: column;
   max-width: 270px;
-  margin: 160px auto 0;
+  margin: 50px auto 0;
+}
+
+.label {
+  font-size: 1.3em;
+  margin-bottom: 8px;
 }
 
 .login-form {
@@ -20,11 +25,6 @@
     width: 200px;
     height: 200px;
     margin: 0 auto 30px;
-  }
-
-  .username-label {
-    font-size: 1.3em;
-    margin-bottom: 8px;
   }
 
   .username {
@@ -57,19 +57,11 @@
   }
 }
 
-.new-form {
-  @extend .form;
-  margin: 100px auto;
-}
+
 
 .register-form {
   @extend .login-form;
-  margin-top: 60px;
-
-  .role-label,
-  .avatar-label {
-    @extend .username-label;
-  }
+  margin-top: 20px;
 
   #user_role,
   .avatar-field {
@@ -85,13 +77,6 @@
 .new_product {
   @extend .login-form;
 
-  .name-label,
-  .price-label,
-  .quantity-label,
-  .upc-label {
-    @extend .username-label;
-  }
-
   .name,
   .price,
   .quantity,
@@ -103,4 +88,14 @@
     @extend .login-btn;
     background: linear-gradient(#5fb523, #549e1f);
   }
+}
+
+.new_group {
+  @extend .new_product;
+  @extend .register-form;
+}
+
+.create-group {
+  text-align: right;
+  margin: 10px 0 20px;
 }

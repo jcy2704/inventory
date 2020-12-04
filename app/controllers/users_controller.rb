@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   include UsersHelper
+  include ApplicationHelper
+
   def index
     redirect_if_not_logged
   end

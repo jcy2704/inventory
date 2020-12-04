@@ -34,3 +34,12 @@ input[type=number].upc {
     }
   }
 }
+
+.all-groups {
+  @extend .all-products;
+
+  .add-group {
+    @extend .add-product;
+  }
+}
+

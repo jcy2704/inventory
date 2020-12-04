@@ -1,0 +1,10 @@
+<%= form_for @group, html: { class: 'new_group'} do |g| %>
+  <% if @group.icon.attached? %>
+    <%= image_tag @group.icon %>
+  <% end %>
+  <%= g.label :name, 'Group Name', class: 'label' %>
+  <%= g.text_field :name, class: 'name' %>
+  <%= g.label :icon, 'Group Icon', class: 'label' %>
+  <%= g.file_field :icon, class: 'avatar-field' %>
+  <%= g.submit %>
+<% end %>

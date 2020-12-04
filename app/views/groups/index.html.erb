@@ -1,0 +1,18 @@
+<div class="all-groups">
+  <h1 class="title">All Groups</h1>
+
+  <div class="add-group">
+    <%= link_to 'Create Group', new_group_path %>
+  </div>
+</div>
+
+<% @groups.each do |g| %>
+  <div>
+    <% if g.icon.attached? %>
+      <%= image_tag  g.icon, class: 'group-icon' %>
+    <% end %>
+    <%= g.name %>
+    <%= label_tag 'Products: ' %>
+    <%= g.products.count %>
+  </div>
+<% end %>
