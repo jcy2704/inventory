@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   end
 
   def new_login
-    @user = User.find_by(username: params[:username])
+    @user = User.find_by(username: params[:username].downcase)
     if @user.nil?
       redirect_to login_path, alert: 'User does not exists.'
     else

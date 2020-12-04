@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   root to: 'products#index'
 
-  resources :users
-  resources :products
-  resources :groups
+  resources :users, except: %i[new edit]
+  resources :products, except: %i[new edit]
+  resources :groups, except: %i[new edit]
 
-  get '/register', to: 'users#new'
+  get '/register', to: 'users#new', as: 'new_user'
   get '/login', to: 'users#login'
   post '/login', to: 'users#new_login'
   get '/logout', to: 'users#logout'
-  get '/edit_user/:id', to: 'users#edit'
+  get '/edit_user/:id', to: 'users#edit', as: 'edit_user'
 
-  get '/new_product', to: 'products#new'
-  get '/edit_product/:id', to: 'products#edit'
+  get '/new_product', to: 'products#new', as: 'new_product'
+  get '/edit_product/:id', to: 'products#edit', as: 'edit_product'
 
-  get '/new_group', to: 'groups#new'
-  get '/edit_group/:id', to: 'groups#edit'
+  get '/new_group', to: 'groups#new', as: 'new_group'
+  get '/edit_group/:id', to: 'groups#edit', as: 'edit_group'
 end

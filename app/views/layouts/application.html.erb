@@ -12,21 +12,30 @@
   <body>
     <header class="header">
       <nav class="navbar">
-        <ul class="nav-left">
-            <%= link_to  'All Users', users_path if session[:current_user] && current_user.admin? %>
-            <%= link_to 'Transactions', users_path %>
-            <%= link_to  'Products', products_path %>
-            <%= link_to 'Groups', groups_path %>
-        </ul>
-        <ul class="nav-right">
+        <% if logged_in? %>
+          <div class="nav-left">
+              <%= link_to 'Transactions', users_path %>
+              <%= link_to 'Products', products_path %>
+              <%= link_to 'Groups', groups_path %>
+              <%= link_to 'All Users', users_path if session[:current_user] && current_user.admin? %>
+          </div>
+        <% end %>
+        <div class="nav-right">
           <% if logged_in? %>
-            <%= link_to current_user.username.capitalize , user_path(current_user.id) %>
-            <%= link_to  'Logout', logout_path %>
+            <div class="profile">
+              <% if current_user.avatar.attached? %>
+                <a href=<%= user_path(current_user.id) %>>
+                <%= image_tag current_user.avatar, class: 'avatar' %>
+                </a>
+              <% end %>
+              <%= link_to current_user.username.capitalize , user_path(current_user.id) %>
+            </div>
+            <%= link_to 'Logout', logout_path %>
           <% else %>
-            <%= link_to  'Login', login_path %>
-            <%= link_to  'Register', new_user_path %>
+            <%= link_to 'Login', login_path, class: 'profile' %>
+            <%= link_to 'Register', new_user_path %>
           <% end %>
-        </ul>
+        </div>
       </nav>
     </header>
     <main>
