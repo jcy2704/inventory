@@ -1,1 +1,0 @@
-//= require allow_numeric
