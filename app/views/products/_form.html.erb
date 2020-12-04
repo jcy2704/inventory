@@ -2,11 +2,16 @@
   <%= p.label :name, 'Product Name', class: 'name-label' %>
   <%= p.text_field :name, class: 'name' %>
   <%= p.label :price, class: 'price-label' %>
-  <%= p.number_field :price, min: 0, class: 'price' %>
+  <%= p.number_field :price, min: 0, step: 0.01, class: 'price' %>
   <%= p.label :quantity, class: 'quantity-label' %>
   <%= p.number_field :quantity, step: 1, min: 0, class: 'quantity' %>
   <%= p.label :upc, 'Universal Product Code (UPC)', class: 'upc-label' %>
   <%= p.number_field :upc, min: 100000000000, max: 999999999999, class: 'upc' %>
+  <% if @groups.nil? %>
+    <%= link_to  "Create Group", new_group_path, class: 'name-label' %>
+  <% else %>
+    <%= p.select :group_id, options_for_select(@groups.collect{ |group| [group.name, group.id] }, @group), include_blank: '' %>
+  <% end %>
   <%= p.submit %>
 
   <% @product.errors.full_messages.each do |error| %>

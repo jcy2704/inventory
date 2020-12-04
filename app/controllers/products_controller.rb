@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-
+    @groups = Group.all
     if @product.save
       redirect_to products_path
     else

@@ -2,18 +2,35 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-input[type=number]::-webkit-inner-spin-button.price-input,
-input[type=number]::-webkit-outer-spin-button.price-input,
-input[type=number]::-webkit-inner-spin-button.upc-input,
-input[type=number]::-webkit-outer-spin-button.upc-input {
+input[type=number]::-webkit-inner-spin-button.price,
+input[type=number]::-webkit-outer-spin-button.price,
+input[type=number]::-webkit-inner-spin-button.upc,
+input[type=number]::-webkit-outer-spin-button.upc {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     margin: 0;
 }
 
-input[type=number].price-input,
-input[type=number].upc-input {
+input[type=number].price,
+input[type=number].upc {
   -moz-appearance: textfield;
 }
 
+.all-products {
+  display: flex;
+  justify-content: space-between;
+
+  .add-product {
+    padding: 0.4rem 0.6rem;
+    color: white;
+    background: linear-gradient(#5fb523, #549e1f);
+    border-radius: 15px;
+    cursor: pointer;
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
