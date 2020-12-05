@@ -7,8 +7,10 @@
   <% end %>
   <%= f.label :username, 'Username', class: 'label' %>
   <%= f.text_field :username, class: 'username' %>
-  <%= f.label :role, 'Role', class: 'label' %>
-  <%= f.select :role, options_for_select(%w[Admin Employee], @user.role.capitalize), include_blank: '' %>
+  <% if current_user.admin? || !logged_in?%>
+    <%= f.label :role, 'Role', class: 'label' %>
+    <%= f.select :role, options_for_select(%w[Admin Employee], @user.role.capitalize), include_blank: '' %>
+  <% end %>
   <% if !logged_in? || @user == current_user %>
     <%= f.label :avatar, 'Avatar', class: 'label' %>
     <%= f.file_field :avatar, class: 'avatar-field' %>

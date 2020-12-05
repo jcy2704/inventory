@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def index
     redirect_if_not_logged
+    redirect_to root_path unless current_user.admin?
     @users = User.all
   end
 
@@ -32,8 +33,12 @@ class UsersController < ApplicationController
 
   def edit
     exists?
-    redirect_to products_path unless logged_in? && current_user.admin?
     @user = User.find(params[:id])
+    if @user == current_user || current_user.admin?
+      render :edit
+    else
+      redirect_to root_path
+    end
   end
 
   def update
