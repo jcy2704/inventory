@@ -17,16 +17,16 @@
               <%= link_to 'Transactions', users_path %>
               <%= link_to 'Products', products_path %>
               <%= link_to 'Groups', groups_path %>
-              <%= link_to 'All Users', users_path if session[:current_user] && current_user.admin? %>
+              <%= only_admins %>
           </div>
         <% end %>
         <div class="nav-right">
           <% if logged_in? %>
             <div class="profile">
-              <a href=<%= user_path(current_user.id) %>>
+              <a href=<%= edit_user_path(current_user.id) %>>
                 <%= avatar_attached %>
               </a>
-              <%= link_to current_user.username.capitalize , user_path(current_user.id) %>
+              <%= link_to current_user.username.capitalize , edit_user_path(current_user.id) %>
             </div>
             <%= link_to 'Logout', logout_path %>
           <% else %>
@@ -42,7 +42,7 @@
       <% unless flash.empty? %>
         <script type="text/javascript">
           <% flash.each do |t, f| %>
-            <% type = t.to_s.gsub('alert', 'error').gsub('notice', 'info') %>
+            <% type = t.to_s.gsub('alert', 'error').gsub('notice', 'info').gsub('succeeded', 'success') %>
             toastr['<%= type %>']('<%= f %>');
           <% end %>
         </script>

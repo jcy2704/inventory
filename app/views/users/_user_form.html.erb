@@ -9,7 +9,9 @@
   <%= f.text_field :username, class: 'username' %>
   <%= f.label :role, 'Role', class: 'label' %>
   <%= f.select :role, options_for_select(%w[Admin Employee], @user.role.capitalize), include_blank: '' %>
-  <%= f.label :avatar, 'Avatar', class: 'label' %>
-  <%= f.file_field :avatar, class: 'avatar-field' %>
+  <% if !logged_in? || @user == current_user %>
+    <%= f.label :avatar, 'Avatar', class: 'label' %>
+    <%= f.file_field :avatar, class: 'avatar-field' %>
+  <% end %>
   <%= f.submit %>
 <% end %>

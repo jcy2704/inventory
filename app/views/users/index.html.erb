@@ -1,4 +1,23 @@
-<%= current_user.id %>
-<% if current_user.avatar.attached? %>
-  <%= image_tag current_user.avatar, style: 'width: 200px;' %>
-<% end %>
+<div class="all-users">
+  <h1 class="title">All Users</h1>
+
+  <div class="add-user">
+    <%= link_to 'Add User', new_user_path %>
+  </div>
+</div>
+
+<ul class="user-cards">
+  <% not_current_user(@users).each do |u| %>
+    <li class="card">
+      <a href=<%= edit_user_path(u.id) %>>
+        <div class="flex">
+          <%=  users_avatars(u) %>
+          <div class='details'>
+            <%= content_tag(:h3, u.username.capitalize, class: 'title') %>
+            <%= content_tag(:p, "Role: #{u.role.capitalize}", class: 'deat') %>
+          </div>
+        </div>
+      </a>
+    </li>
+  <% end %>
+</ul>

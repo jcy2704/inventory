@@ -10,4 +10,10 @@ module ApplicationHelper
   def errors_s(entity)
     entity.errors.full_messages.each(&:to_s)
   end
+
+  def only_admins
+    return unless session[:current_user] && current_user.admin?
+
+    link_to 'All Users', users_path
+  end
 end

@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root to: 'products#index'
 
-  resources :users, except: %i[new edit]
+  resources :users, except: %i[new edit show]
   resources :products, except: %i[new edit]
   resources :groups, except: %i[new edit]
 
-  get '/register', to: 'users#new', as: 'new_user'
+  get '/new_user', to: 'users#new', as: 'new_user'
   get '/login', to: 'users#login'
   post '/login', to: 'users#new_login'
   get '/logout', to: 'users#logout'

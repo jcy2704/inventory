@@ -4,13 +4,16 @@ class UsersController < ApplicationController
 
   def index
     redirect_if_not_logged
+    @users = User.all
   end
 
   def new
-    if logged_in?
-      redirect_to products_path
-    else
+    if !logged_in? || current_user.admin?
       @user = User.new
+    elsif logged_in?
+      redirect_to products_path, notice: "#{current_user.username.capitalize}, you are already signed in."
+    else
+      redirect_to products_path, notice: "#{current_user.username.capitalize}, you are not an admin."
     end
   end
 
@@ -20,7 +23,7 @@ class UsersController < ApplicationController
 
     if @user.save
       new_current_user(@user)
-      redirect_to products_path, notice: "Welcome, #{@user.username.capitalize}"
+      redirect_to products_path, succeeded: "Welcome, #{@user.username.capitalize}"
     else
       flash.now[:alert] = "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
       render :new
@@ -56,13 +59,13 @@ class UsersController < ApplicationController
       redirect_to login_path, alert: 'User does not exists.'
     else
       new_current_user(@user)
-      redirect_to products_path, notice: 'Logged In Successfully.'
+      redirect_to products_path, succeeded: 'Logged In Successfully.'
     end
   end
 
   def logout
     reset_session
-    redirect_to login_path, notice: 'Logged Out Successfully'
+    redirect_to login_path, succeeded: 'Logged Out Successfully'
   end
 
   def remove_avatar

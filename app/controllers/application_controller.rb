@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_user, :logged_in?, :exists?, :redirect_if_not_logged
+  add_flash_types :succeeded
 
   def current_user
     @current_user ||= User.find(session[:current_user]['id']) if session[:current_user]

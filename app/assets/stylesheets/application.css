@@ -35,6 +35,8 @@ a {
   justify-content: space-between;
   padding: 15px 25px;
   background: linear-gradient(#3778c2, #2d619d);
+  position: sticky;
+  top: 0;
 }
 
 .nav-left {

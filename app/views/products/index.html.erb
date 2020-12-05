@@ -6,18 +6,32 @@
   </div>
 </div>
 
-<% @products.each do |p| %>
-  <div>
-    <%= p.name %>
-    <%= label_tag 'Price: ' %>
-    <%= number_to_currency(p.price) %>
-    <%= label_tag 'Quantity: ' %>
-    <%= p.quantity %>
-    <% if !p.upc.nil? %>
-      <%= label_tag 'UPC: ' %>
-      <%= p.upc %>
-    <% end %>
-    <%= label_tag 'Group: ' %>
-    <%= p.group.name %>
-  </div>
-<% end %>
+<ul class="products-cards">
+  <% @products.each do |p| %>
+    <li class="card">
+      <a href=<%= edit_product_path(p.id) %>>
+        <div class="flex details products">
+          <%= content_tag(:h3, p.name.capitalize, class: 'title') %>
+          <div class="flex p-deat">
+            <%= label_tag 'Price: ' %>
+            <%= content_tag(:p, number_to_currency(p.price), class: 'deat') %>
+          </div>
+          <div class="flex p-deat">
+            <%= label_tag 'Quantity: ' %>
+            <%= content_tag(:p, p.quantity, class: 'deat') %>
+          </div>
+          <% if !p.upc.nil? %>
+            <div class="flex p-deat">
+              <%= label_tag 'UPC: ' %>
+              <%= content_tag(:p, p.upc, class: 'deat') %>
+            </div>
+          <% end %>
+          <div class="flex p-deat">
+            <%= label_tag 'Group: ' %>
+            <%= content_tag(:p, p.group.name, class: 'deat') %>
+          </div>
+        </div>
+      </a>
+    </li>
+  <% end %>
+</ul>

@@ -57,8 +57,6 @@
   }
 }
 
-
-
 .register-form {
   @extend .login-form;
   margin-top: 20px;
@@ -98,4 +96,10 @@
 .create-group {
   text-align: right;
   margin: 10px 0 20px;
+}
+
+.avatar-show {
+  border-radius: 0;
+  width: 100px;
+  height: 100px;
 }

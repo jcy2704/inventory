@@ -1,5 +1,8 @@
+<% if logged_in? %>
+  <%= link_to  '< Back', :back, class: 'back' %>
+<% end %>
 <div class="form">
-  <h1>Register</h1>
+  <%= new_user %>
 
   <%= render 'user_form' %>
 </div>

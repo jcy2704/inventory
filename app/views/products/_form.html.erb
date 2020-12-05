@@ -8,8 +8,8 @@
   <%= p.label :upc, 'Universal Product Code (UPC)', class: 'label' %>
   <%= p.number_field :upc, min: 100000000000, max: 999999999999, class: 'upc' %>
   <% if !Group.nil? %>
-    <%= p.label :group_id, 'Group', class: 'label' %>
-    <%= p.select :group_id, options_for_select(Group.all.collect{ |group| [group.name, group.id] }, @product.group), include_blank: '' %>
+    <%= p.label 'Group', class: 'label' %>
+    <%= p.select(:group_id, options_for_select(Group.all.map{ |group| [group.name, group.id] }, @product.group.id), include_blank: '') %>
   <% end %>
   <%= link_to  "Create Group", new_group_path, class: 'create-group' %>
   <%= p.submit %>
