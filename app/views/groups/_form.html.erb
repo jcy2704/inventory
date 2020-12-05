@@ -1,6 +1,7 @@
 <%= form_for @group, html: { class: 'new_group'} do |g| %>
+  <%= group_icon(@group, 'icon-big') %>
   <% if @group.icon.attached? %>
-    <%= image_tag @group.icon %>
+    <%= link_to  "Remove", remove_icon_path(@group.icon.id), method: :delete %>
   <% end %>
   <%= g.label :name, 'Group Name', class: 'label' %>
   <%= g.text_field :name, class: 'name' %>

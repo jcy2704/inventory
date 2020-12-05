@@ -12,11 +12,11 @@ module UsersHelper
     text.to_s.gsub(/\n/, '<br/>')
   end
 
-  def users_avatars(user)
+  def users_avatars(user, class_name)
     if user.avatar.attached?
-      image_tag user.avatar, class: 'avatar-show'
+      image_tag user.avatar, class: class_name
     else
-      image_tag 'default.jpg', class: 'avatar-show'
+      image_tag 'default.jpg', class: class_name
     end
   end
 

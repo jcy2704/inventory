@@ -98,8 +98,16 @@
   margin: 10px 0 20px;
 }
 
-.avatar-show {
+.avatar-show,
+.icon {
   border-radius: 0;
   width: 100px;
   height: 100px;
+}
+
+.icon-big {
+  border-radius: 0%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
 }

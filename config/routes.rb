@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   post '/login', to: 'users#new_login'
   get '/logout', to: 'users#logout'
   get '/edit_user/:id', to: 'users#edit', as: 'edit_user'
-  delete '/avatar_delete', to: 'users#remove_avatar', as: 'remove_avatar'
+  delete '/avatar_delete/:id', to: 'users#remove_avatar', as: 'remove_avatar'
 
   get '/new_product', to: 'products#new', as: 'new_product'
   get '/edit_product/:id', to: 'products#edit', as: 'edit_product'
 
   get '/new_group', to: 'groups#new', as: 'new_group'
   get '/edit_group/:id', to: 'groups#edit', as: 'edit_group'
+  delete '/icon_delete/:id', to: 'groups#remove_icon', as: 'remove_icon'
 end

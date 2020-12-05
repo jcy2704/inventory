@@ -47,9 +47,9 @@ class UsersController < ApplicationController
     @user.role.downcase!
     if @user.save && @user == current_user
       new_current_user(@user)
-      redirect_to products_path
+      redirect_back(fallback_location: root_path)
     elsif @user.save
-      redirect_to products_path
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -74,9 +74,9 @@ class UsersController < ApplicationController
   end
 
   def remove_avatar
-    image = current_user.avatar
+    image = ActiveStorage::Attachment.find(params[:id])
     image.purge
 
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 end

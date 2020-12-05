@@ -32,9 +32,20 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     if @group.save
-      redirect_to groups_path
+      redirect_back(fallback_location: root_path)
     else
       render :edit
     end
+  end
+
+  def show
+    @group = Group.find(params[:id])
+    @products = @group.products
+  end
+
+  def remove_icon
+    @icon = ActiveStorage::Attachment.find(params[:id])
+    @icon.purge
+    redirect_back(fallback_location: root_path)
   end
 end
