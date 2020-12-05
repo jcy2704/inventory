@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def index
     redirect_if_not_logged
-    @products = Product.all
+    @products = Product.order(name: :asc)
   end
 
   def new

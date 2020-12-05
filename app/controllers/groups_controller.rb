@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     redirect_if_not_logged
-    @groups = Group.all
+    @groups = Group.order(name: :asc)
   end
 
   def new
@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @products = @group.products
+    @products = @group.products.order(name: :asc)
   end
 
   def remove_icon

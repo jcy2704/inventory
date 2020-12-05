@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     redirect_if_not_logged
     redirect_to root_path unless current_user.admin?
-    @users = User.all
+    @users = User.order(username: :asc)
   end
 
   def new
