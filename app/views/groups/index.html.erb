@@ -9,11 +9,11 @@
 <ul class="group-cards">
   <% @groups.each do |g| %>
     <li class="card">
-      <a href=<%= edit_group_path(g.id) %>>
+      <a href=<%= group_path(g.id) %>>
         <div class="flex">
           <%= group_icon(g, 'icon') %>
           <div class='details'>
-            <%= content_tag(:h3, g.name.capitalize, class: 'title') %>
+            <%= content_tag(:h3, g.name.titleize, class: 'title') %>
             <%= content_tag(:p, "Products: #{g.products.count}", class: 'deat') %>
           </div>
         </div>

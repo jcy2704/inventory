@@ -1,7 +1,14 @@
-<div class="group-products">
+<div class="all-products">
   <h1 class="title"><%= @group.name %> Products</h1>
 
-  <div class="add-group">
-    <%= link_to 'Add Product', new_product_path %>
+  <div class="flex group-btns">
+    <div class="add-product">
+      <%= link_to 'Edit Group', edit_group_path, class: 'edit-group' %>
+    </div>
+    <div class="add-product">
+      <%= link_to 'Add Product', new_product_path %>
+    </div>
   </div>
 </div>
+
+<%= render partial: 'products/products_cards' %>
