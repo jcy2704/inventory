@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, except: %i[new edit show]
   resources :products, except: %i[new edit]
   resources :groups, except: %i[new edit]
+  resources :transactions
 
   get '/new_user', to: 'users#new', as: 'new_user'
   get '/login', to: 'users#login'
@@ -18,4 +19,14 @@ Rails.application.routes.draw do
   get '/new_group', to: 'groups#new', as: 'new_group'
   get '/edit_group/:id', to: 'groups#edit', as: 'edit_group'
   delete '/icon_delete/:id', to: 'groups#remove_icon', as: 'remove_icon'
+
+  get 'carts/:id', to: 'carts#show', as: 'cart'
+  delete 'carts/:id', to: 'carts#destroy'
+
+  post 'line_items/:id/add' => "line_items#add_quantity", as: "line_item_add"
+  post 'line_items/:id/reduce' => "line_items#reduce_quantity", as: "line_item_reduce"
+  post 'line_items' => "line_items#create"
+  get 'line_items/:id' => "line_items#show", as: "line_item"
+  delete 'line_items/:id' => "line_items#destroy"
 end
+
