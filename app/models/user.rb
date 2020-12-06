@@ -8,7 +8,7 @@ class User < ApplicationRecord
   before_save :downcase_field
 
   has_one_attached :avatar
-  has_many :transactions
+  has_many :sales
 
   def admin?
     role == 'admin'

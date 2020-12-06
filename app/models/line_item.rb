@@ -1,5 +1,8 @@
 class LineItem < ApplicationRecord
   belongs_to :product
   belongs_to :cart
-  belongs_to :transaction
+
+  def total_price
+    quantity * product.price
+  end
 end

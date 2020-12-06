@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   def current_cart
     if session[:cart_id]
-      cart = Cart.find(id: session[:cart_id])
+      cart = Cart.find_by(id: session[:cart_id])
       if cart.present?
         @current_cart = cart
       else

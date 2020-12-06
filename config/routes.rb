@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :users, except: %i[new edit show]
   resources :products, except: %i[new edit]
   resources :groups, except: %i[new edit]
-  resources :transactions
 
   get '/new_user', to: 'users#new', as: 'new_user'
   get '/login', to: 'users#login'
@@ -28,5 +27,7 @@ Rails.application.routes.draw do
   post 'line_items' => "line_items#create"
   get 'line_items/:id' => "line_items#show", as: "line_item"
   delete 'line_items/:id' => "line_items#destroy"
+
+  post 'sales', to: 'sales#create'
 end
 
