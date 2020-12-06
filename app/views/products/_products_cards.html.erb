@@ -24,6 +24,9 @@
           </div>
         </div>
       </a>
+      <div>
+        <%= button_to "Add #{product.name} to cart", line_items_path(product_id: p.id) %>
+      </div>
     </li>
   <% end %>
 </ul>
