@@ -62,42 +62,48 @@ input[type=number].upc {
   color: #434b54;
   margin-bottom: 25px;
 
+
   a {
-    display: inline-block;
     width: 100%;
     padding: 20px;
   }
-}
 
-.details {
-  width: 100%;
-  padding-left: 20px;
-  font-family: 'PNovaL';
-  font-size: 1.2em;
+  .left-deat,
+  .right-deat {
+    font-family: 'PNovaL';
+    font-size: 1.2em;
+  }
+
+  .left-deat {
+    width: 500px;
+  }
+
+  .right-deat {
+    align-items: center;
+
+    .deat:first-child {
+      width: 200px;
+    }
+
+    .deat:not(:first-child) {
+      width: 150px;
+    }
+  }
 
   .title {
     font-family: 'PNovaB';
-    font-size: 1.4em;
+    font-size: 1.3em;
   }
 
-  .deat {
-    margin-top: 0.8rem;
-    margin: 0;
-  }
-}
+  .product-btn {
+    display: flex;
+    align-items: center;
+    padding: 20px;
 
-.products {
-  align-items: center;
-
-  .title {
-    width: 320px;
-  }
-  .p-deat {
-    width: 200px;
-    margin-left: 30px;
-
-    .deat {
-      margin-left: 8px;
+    .button_to {
+      input[type=submit] {
+        width: 220px;
+      }
     }
   }
 }

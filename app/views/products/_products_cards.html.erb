@@ -3,20 +3,20 @@
     <li class="card">
       <div class="flex">
         <a class="flex" href=<%= edit_product_path(p.id) %>>
-          <div>
+          <div class="left-deat">
             <%= content_tag(:h3, p.name, class: 'title') %>
             <%= content_tag(:p, "Group: #{p.group.name}") %>
             <% if !p.upc.nil? %>
               <%= content_tag(:p, "UPC: #{p.upc}") %>
             <% end %>
           </div>
-          <div>
-            <%= content_tag(:p, "Price: #{number_to_currency(p.price)}") %>
-            <%= content_tag(:p, "QTY: #{p.quantity}") %>
-            <%= content_tag(:p, "Sales: #{total_sales(p)}") %>
+          <div class="right-deat flex">
+            <%= content_tag(:p, "Price: #{number_to_currency(p.price)}", class: 'deat') %>
+            <%= content_tag(:p, "QTY: #{p.quantity}", class: 'deat') %>
+            <%= content_tag(:p, "Sales: #{total_sales(p)}", class: 'deat') %>
           </div>
         </a>
-        <div>
+        <div class="product-btn">
           <%= options(p) %>
         </div>
       </div>
