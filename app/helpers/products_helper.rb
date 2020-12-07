@@ -18,4 +18,12 @@ module ProductsHelper
     end
     sales
   end
+
+  def product_group_nil(product)
+    if !product.group.nil?
+      product.group.id
+    else
+      product.group
+    end
+  end
 end
