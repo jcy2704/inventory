@@ -6,7 +6,13 @@ class SalesController < ApplicationController
       @sale.line_items << item
       item.cart_id = nil
     end
+
     @sale.save
+
+    @sale.line_items.each do |x|
+      p = Product.find(x.product_id)
+      p.update(quantity: p.quantity -= x.quantity)
+    end
 
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
