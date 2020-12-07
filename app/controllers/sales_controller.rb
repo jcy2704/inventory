@@ -14,7 +14,7 @@ class SalesController < ApplicationController
       p.update(quantity: p.quantity -= x.quantity)
     end
 
-    Cart.destroy(session[:cart_id])
+    Cart.find_by(id: session[:cart_id]).destroy
     session[:cart_id] = nil
     redirect_to root_path
   end

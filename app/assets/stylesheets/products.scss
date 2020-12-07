@@ -109,6 +109,11 @@ input[type=number].upc {
     display: flex;
     align-items: center;
     padding: 20px;
+    
+    .out-stock {
+      width: 210px;
+      text-align: center;
+    }
 
     .button_to {
       input[type=submit] {

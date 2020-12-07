@@ -6,6 +6,8 @@ module ProductsHelper
   def options(product)
     if current_page?(delete_product_path)
       link_to 'Remove Product', product_delete_path(product), method: :delete
+    elsif product.quantity.zero?
+      link_to 'OUT OF STOCK', edit_product_path(product.id), class: 'out-stock'
     else
       button_to "Add #{product.name} to Cart", line_items_path(product_id: product.id)
     end
