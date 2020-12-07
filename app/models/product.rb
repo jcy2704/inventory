@@ -6,8 +6,6 @@ class Product < ApplicationRecord
   validates :group_id, presence: true
 
   belongs_to :group
-  has_many :transactions
-  has_many :sellers, through: :transactions
 
   has_many :line_items, dependent: :destroy
 end
