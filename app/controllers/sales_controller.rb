@@ -1,4 +1,8 @@
 class SalesController < ApplicationController
+  def index
+    @sales = Sale.all.includes(:line_items, :seller)
+  end
+
   def create
     @sale = Sale.new
     @sale.seller = current_user

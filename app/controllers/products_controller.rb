@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
 
   def index
     redirect_if_not_logged
-    @products = Product.order(name: :asc)
+    @products = Product.order(name: :asc).includes(:line_items, :group)
   end
 
   def new
@@ -27,6 +27,12 @@ class ProductsController < ApplicationController
   def edit
     redirect_if_not_logged
     @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to products_path
   end
 
   def destroy

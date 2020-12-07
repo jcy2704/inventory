@@ -40,7 +40,7 @@ class GroupsController < ApplicationController
 
   def show
     @group = Group.find(params[:id])
-    @products = @group.products.order(name: :asc)
+    @products = @group.products.order(name: :asc).includes(:line_items)
   end
 
   def remove_icon
