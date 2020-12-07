@@ -8,7 +8,7 @@
 
 <ul class="group-cards">
   <% @groups.each do |g| %>
-    <li class="card">
+    <li class="card g-card">
       <a href=<%= group_path(g.id) %>>
         <div class="flex">
           <%= group_icon(g, 'icon') %>
