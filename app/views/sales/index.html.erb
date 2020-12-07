@@ -1,0 +1,17 @@
+<ul class="sales-cards">
+  <% @sales.each do |s| %>
+    <li class="card">
+      <a class="flex" href=<%= sale_path(s.id) %>>
+        <div class="grid">
+          <% s.line_items.includes(:product).each do |l| %>
+            <%= l.product.name %>
+          <% end %>
+        </div>
+        <div>
+          Sale Nº <%= s.id %>
+          <%= s.seller.username %>
+        </div>
+      </a>
+    </li>
+  <% end %>
+</ul>

@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   resources :users, except: %i[new edit show]
   resources :products, except: %i[new edit destroy]
-  resources :groups, except: %i[new edit]
+  resources :groups, except: %i[new edit destroy]
+  resources :sales, except: %i[new create destroy ]
 
   get '/new_user', to: 'users#new', as: 'new_user'
   get '/login', to: 'users#login'

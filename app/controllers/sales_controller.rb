@@ -1,6 +1,6 @@
 class SalesController < ApplicationController
   def index
-    @sales = Sale.all.includes(:line_items, :seller)
+    @sales = Sale.all.includes(:seller)
   end
 
   def create
