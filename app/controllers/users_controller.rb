@@ -11,10 +11,8 @@ class UsersController < ApplicationController
   def new
     if !logged_in? || current_user.admin?
       @user = User.new
-    elsif logged_in?
+    elsif logged_in? && !current_user.admin?
       redirect_to products_path, notice: "#{current_user.username.capitalize}, you are already signed in."
-    else
-      redirect_to products_path, notice: "#{current_user.username.capitalize}, you are not an admin."
     end
   end
 
@@ -23,8 +21,12 @@ class UsersController < ApplicationController
     @user.role.downcase!
 
     if @user.save
-      new_current_user(@user)
-      redirect_to products_path, succeeded: "Welcome, #{@user.username.capitalize}"
+      if logged_in?
+        redirect_to users_path
+      else
+        new_current_user(@user)
+        redirect_to products_path, succeeded: "Welcome, #{@user.username.capitalize}"
+      end
     else
       flash.now[:alert] = "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
       render :new

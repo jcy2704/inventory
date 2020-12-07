@@ -8,7 +8,7 @@
 
 <ul class="user-cards">
   <% not_current_user(@users).each do |u| %>
-    <li class="card">
+    <li class="card g-card">
       <a href=<%= edit_user_path(u.id) %>>
         <div class="flex">
           <%=  users_avatars(u, 'avatar-show') %>
