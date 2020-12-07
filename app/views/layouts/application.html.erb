@@ -28,6 +28,7 @@
               </a>
               <%= link_to current_user.username.capitalize , edit_user_path(current_user.id) %>
             </div>
+            <%= link_to  'Cart', cart_path(@current_cart), class: 'profile' %>
             <%= link_to 'Logout', logout_path %>
           <% else %>
             <%= link_to 'Login', login_path, class: 'profile' %>

@@ -105,11 +105,18 @@ input[type=number].upc {
     font-size: 1.3em;
   }
 
+  .add-to {
+    padding: 20px;
+
+    a {
+      padding: 10px;
+    }
+  }
+
   .product-btn {
     display: flex;
     align-items: center;
-    padding: 20px;
-    
+
     .out-stock {
       width: 210px;
       text-align: center;

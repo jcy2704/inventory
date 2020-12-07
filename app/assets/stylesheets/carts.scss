@@ -1,3 +1,58 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.cart-card {
+  padding: 20px;
+  justify-content: space-between;
+
+  .left-deat {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .c-deat {
+    margin-left: 30px;
+
+    p {
+      margin-right: 50px;
+    }
+  }
+
+  .product-btn {
+    font-family: 'PNovaL';
+    font-size: 1.15em;
+    flex-direction: column;
+
+    input[type=submit] {
+      margin-bottom: 10px;
+    }
+  }
+}
+.footer {
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 20px 20px;
+
+  .sub-total {
+    text-align: center;
+  }
+
+  .sell-btn {
+
+    margin-top: 10px;
+
+    .button_to {
+      input[type=submit] {
+        border: 0;
+        text-align: center;
+        color: white;
+        padding: 0.5rem;
+        background: linear-gradient(#5fb523, #549e1f);
+        border-radius: 3px;
+        cursor: pointer;
+        width: 210px;
+      }
+    }
+  }
+}

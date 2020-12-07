@@ -1,27 +1,49 @@
 <div class="all-users">
   <h1 class="title">Cart</h1>
 
-  <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+  <div class="add-product delete-product">
+    <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
+  </div>
 </div>
 
-<ul class="user-cards">
-  <% @cart.line_items.each do |u| %>
+<ul class="cart-cards">
+  <% @cart.line_items.each do |item| %>
     <li class="card">
-      Item: <%= u.product.name %>/ Price: <%= number_to_currency(u.product.price) %>/ Quantity: <%= u.quantity %>/ Total Price: <%= number_to_currency(u.total_price) %>
-        <ul class="flex">
-          <li>
-            <%= link_to "Add one", line_item_add_path(id: u), method: :post %>
-            <%= link_to "Reduce one", line_item_reduce_path(id: u), method: :post %>
-          </li>
-          <li>
-            <%= link_to "Remove item", line_item_path(u), method: :delete %>
-          </li>
-        </ul>
-      </a>
+      <div class="flex cart-card">
+        <div class="flex">
+          <div class="left-deat flex">
+            <%= content_tag(:h3, item.product.name, class: 'title') %>
+            <%= content_tag(:p, "Group: #{item.product.group.name}") %>
+            <% if !item.product.upc.nil? %>
+              <%= content_tag(:p, "UPC: #{item.product.upc}") %>
+            <% end %>
+          </div>
+          <div class="c-deat right-deat flex ">
+            <%= content_tag(:p, "Price: #{number_to_currency(item.product.price)}") %>
+            <div>
+              QTY:
+              <%= link_to "-", line_item_reduce_path(id: item), method: :post %>
+              <%= item.quantity %>
+              <%= link_to "+", line_item_add_path(id: item), method: :post %>
+            </div>
+          </div>
+        </div>
+        <div class="product-btn">
+          <%= button_to "Remove Product", line_item_path(item), method: :delete %>
+          Total Price: <%= number_to_currency(item.total_price) %>
+        </div>
+      </div>
     </li>
   <% end %>
 </ul>
 
-<h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-
-<%= link_to 'Sell', sales_path, method: :post %>
+<div class="flex footer">
+  <div class="sub-total">
+    <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
+    <% if @cart.line_items != [] %>
+      <div class="sell-btn">
+        <%= button_to 'Sell', sales_path, method: :post %>
+      </div>
+    <% end %>
+  </div>
+</div>
