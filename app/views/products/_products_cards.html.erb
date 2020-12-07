@@ -1,31 +1,24 @@
 <ul class="products-cards">
   <% @products.each do |p| %>
     <li class="card">
-      <a href=<%= edit_product_path(p.id) %>>
-        <div class="flex details products">
-          <%= content_tag(:h3, p.name, class: 'title') %>
-          <div class="flex p-deat">
-            <%= label_tag 'Price: ' %>
-            <%= content_tag(:p, number_to_currency(p.price), class: 'deat') %>
+      <div class="flex">
+        <a class="flex" href=<%= edit_product_path(p.id) %>>
+          <div>
+            <%= content_tag(:h3, p.name, class: 'title') %>
+            <%= content_tag(:p, "Group: #{p.group.name}") %>
+            <% if !p.upc.nil? %>
+              <%= content_tag(:p, "UPC: #{p.upc}") %>
+            <% end %>
           </div>
-          <div class="flex p-deat">
-            <%= label_tag 'Quantity: ' %>
-            <%= content_tag(:p, p.quantity, class: 'deat') %>
+          <div>
+            <%= content_tag(:p, "Price: #{number_to_currency(p.price)}") %>
+            <%= content_tag(:p, "QTY: #{p.quantity}") %>
+            <%= content_tag(:p, "Sales: #{total_sales(p)}") %>
           </div>
-          <% if !p.upc.nil? %>
-            <div class="flex p-deat">
-              <%= label_tag 'UPC: ' %>
-              <%= content_tag(:p, p.upc, class: 'deat') %>
-            </div>
-          <% end %>
-          <div class="flex p-deat">
-            <%= label_tag 'Group: ' %>
-            <%= content_tag(:p, p.group.name, class: 'deat') %>
-          </div>
+        </a>
+        <div>
+          <%= options(p) %>
         </div>
-      </a>
-      <div>
-        <%= button_to "Add #{p.name} to cart", line_items_path(product_id: p.id) %>
       </div>
     </li>
   <% end %>

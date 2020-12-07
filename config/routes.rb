@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'products#index'
 
   resources :users, except: %i[new edit show]
-  resources :products, except: %i[new edit]
+  resources :products, except: %i[new edit destroy]
   resources :groups, except: %i[new edit]
 
   get '/new_user', to: 'users#new', as: 'new_user'
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get '/new_product', to: 'products#new', as: 'new_product'
   get '/edit_product/:id', to: 'products#edit', as: 'edit_product'
+  delete '/product/:id', to: 'products#destroy', as: 'product_delete'
+  get '/delete_product', to: 'products#delete_product'
 
   get '/new_group', to: 'groups#new', as: 'new_group'
   get '/edit_group/:id', to: 'groups#edit', as: 'edit_group'

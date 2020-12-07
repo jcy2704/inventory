@@ -28,6 +28,16 @@ class ProductsController < ApplicationController
     redirect_if_not_logged
     @product = Product.find(params[:id])
   end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    redirect_to products_path
+  end
+
+  def delete_product
+    @products = Product.order(name: :asc)
+  end
 end
 
 # rubocop:enable Layout/LineLength

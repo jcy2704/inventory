@@ -1,8 +1,13 @@
 <div class="all-products">
   <h1 class="title">All Products</h1>
 
-  <div class="add-product">
-    <%= link_to 'Add Product', new_product_path %>
+  <div class="flex group-btns">
+    <div class="add-product">
+      <%= link_to 'Delete Product', delete_product_path, class: 'edit-group' %>
+    </div>
+    <div class="add-product">
+      <%= link_to 'Add Product', new_product_path %>
+    </div>
   </div>
 </div>
 
