@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.username.downcase!
     @user.role.downcase!
 
     if @user.save
