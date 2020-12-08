@@ -85,6 +85,7 @@ input[type=number].upc {
   .right-deat {
     font-family: 'PNovaL';
     font-size: 1.2em;
+    line-height: 1.3em;
   }
 
   .left-deat {
@@ -137,4 +138,13 @@ input[type=number].upc {
       }
     }
   }
+}
+
+.center {
+  font-family: 'PNovaL';
+  font-size: 1.2em;
+  line-height: 1.3em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }

@@ -3,7 +3,7 @@ class SalesController < ApplicationController
 
   def index
     redirect_if_not_logged
-    @sales = Sale.all.includes(:seller, :line_items)
+    @sales = Sale.order(created_at: :desc).includes(:seller, :line_items)
   end
 
   def create
