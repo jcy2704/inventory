@@ -34,16 +34,6 @@ class ProductsController < ApplicationController
     @product.update(product_params)
     redirect_to products_path
   end
-
-  def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
-    redirect_to products_path
-  end
-
-  def delete_product
-    @products = Product.order(name: :asc)
-  end
 end
 
 # rubocop:enable Layout/LineLength

@@ -1,15 +1,8 @@
 <div class="all-products">
   <h1 class="title">All Products</h1>
 
-  <div class="flex product-btns <%= 'empty' if @products == [] %>">
-    <% if @products != [] %>
-      <div class="delete-product">
-        <%= link_to 'Delete Product', delete_product_path, class: 'delete-btn' %>
-      </div>
-    <% end %>
-    <div class="add-product">
-      <%= link_to 'Add Product', new_product_path %>
-    </div>
+  <div class="add-product">
+    <%= link_to 'Add Product', new_product_path %>
   </div>
 </div>
 
