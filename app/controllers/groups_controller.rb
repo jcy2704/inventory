@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     if @group.save
-      redirect_back(fallback_location: root_path), succeeded: "#{@group.name} Updated Successfully"
+      redirect_to groups_path, succeeded: "#{@group.name} Updated Successfully"
     else
       render :edit
     end
