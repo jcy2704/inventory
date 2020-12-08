@@ -15,7 +15,7 @@ module ProductsHelper
 
   def total_sales(product)
     sales = 0
-    product.line_items.each do |p|
+    product.line_items.where(cart_id: nil).each do |p|
       sales += p.quantity
     end
     sales

@@ -15,6 +15,7 @@
           <div class='details'>
             <%= content_tag(:h3, u.username.titleize, class: 'title') %>
             <%= content_tag(:p, "Role: #{u.role.capitalize}", class: 'deat') %>
+            <%= content_tag(:p, "Sales: #{u.sales.count}", class: 'deat') %>
           </div>
         </div>
       </a>
