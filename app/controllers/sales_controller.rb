@@ -23,7 +23,7 @@ class SalesController < ApplicationController
 
     Cart.find_by(id: session[:cart_id]).destroy
     session[:cart_id] = nil
-    redirect_to root_path
+    redirect_to root_path, succeeded: "Congratulations #{current_user.username.capitalize}, Sale Successful"
   end
 
   def show

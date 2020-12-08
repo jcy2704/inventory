@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
 
     if @group.save
-      redirect_to groups_path
+      redirect_to groups_path, succeeded: "#{@group.name} Created Successfully"
     else
       render :new
     end
@@ -32,7 +32,7 @@ class GroupsController < ApplicationController
     @group.update(group_params)
 
     if @group.save
-      redirect_back(fallback_location: root_path)
+      redirect_back(fallback_location: root_path), succeeded: "#{@group.name} Updated Successfully"
     else
       render :edit
     end

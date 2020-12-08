@@ -13,13 +13,13 @@ class LineItemsController < ApplicationController
     end
 
     @line_item.save
-    redirect_to cart_path(current_user)
+    redirect_to cart_path(current_user), succeeded: "#{@line_item.product.name} Added to Cart"
   end
 
   def destroy
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
-    redirect_to cart_path(@current_cart)
+    redirect_to cart_path(@current_cart), succeeded: "#{@line_item.product.name} Removed Successfully"
   end
 
   def add_quantity

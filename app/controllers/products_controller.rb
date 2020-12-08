@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-      redirect_to products_path
+      redirect_to products_path, succeeded: "#{@product.name} Added Successfully"
     else
       flash.now[:alert] = "#{errors_s(@product)[0]} #{errors_s(@product)[1]} #{errors_s(@product)[2]}‏‏‎ #{errors_s(@product)[3]} #{errors_s(@product)[4]} #{errors_s(@product)[5]}"
       render :new
@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
     @product.update(product_params)
-    redirect_to products_path
+    redirect_to products_path, succeeded: "#{@product.name} Updated Successfully"
   end
 end
 

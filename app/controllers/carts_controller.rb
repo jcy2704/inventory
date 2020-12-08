@@ -7,6 +7,6 @@ class CartsController < ApplicationController
     @cart = @current_cart
     @cart.destroy
     session[:cart_id] = nil
-    redirect_to root_path
+    redirect_to root_path, succeeded: 'Cart Emptied Successfully'
   end
 end
