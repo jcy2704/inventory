@@ -2,13 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.grid {
-  max-width: 100px;
-  max-height: 100px;
-  display: grid;
-  grid-auto-columns: auto;
-}
-
-.w-100 {
-  width: 100%;
+.sub-title {
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 1.1em;
+  color: #434b54;
 }

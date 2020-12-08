@@ -1,0 +1,20 @@
+<div class="all-users">
+  <div>
+    <h1 class="title">Sale Nº <%= @sale.id %></h1>
+    <h3 class="sub-title">Sold by <%= @sale.seller.username.capitalize %></h3>
+  </div>
+</div>
+
+<ul class="sale-card">
+  <% @sale.line_items.includes(:product).each do |item| %>
+    <li class="card">
+      <div class="flex">
+        <%= content_tag(:h3, item.product.name, class: 'title') %>
+        QTY: <%= item.quantity %>
+        Total Sale: <%= number_to_currency(item.total_price) %>
+      </div>
+    </li>
+  <% end %>
+</ul>
+
+

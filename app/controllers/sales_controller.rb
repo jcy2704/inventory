@@ -25,4 +25,8 @@ class SalesController < ApplicationController
     session[:cart_id] = nil
     redirect_to root_path
   end
+
+  def show
+    @sale = Sale.find(params[:id])
+  end
 end
