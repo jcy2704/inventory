@@ -1,9 +1,17 @@
 module SalesHelper
-  def sales_group_icon(item)
-    if !item.product.group.icon.attached?
-      image_tag 'category.svg', class: 'w-100'
-    else
-      image_tag item.product.group.icon, class: 'w-100'
+  def total_sale(product)
+    sale = 0
+    product.line_items.each do |item|
+      sale += item.total_price
     end
+    sale
+  end
+
+  def total_products(product)
+    total = 0
+    product.line_items.each do |item|
+      total += item.quantity
+    end
+    total
   end
 end

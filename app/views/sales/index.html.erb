@@ -14,7 +14,10 @@
             Sold by <%= s.seller.username.capitalize %>
           </li>
           <li>
-            Products Sold: <%= s.line_items.count %>
+            Products Sold: <%= total_products(s) %>
+          </li>
+          <li>
+            Total Sale: <%= number_to_currency(total_sale(s)) %>
           </li>
           <li>
             Sale Made at <%= s.created_at.localtime.strftime('%d/%m/%Y %H:%M') %>

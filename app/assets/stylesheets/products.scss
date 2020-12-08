@@ -52,6 +52,10 @@ input[type=number].upc {
     width: 250px;
     justify-content: space-between;
   }
+
+  .empty {
+    justify-content: flex-end;
+  }
 }
 
 .all-groups,
