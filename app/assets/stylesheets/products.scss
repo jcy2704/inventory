@@ -14,10 +14,10 @@ input[type=number]::-webkit-inner-spin-button.price,
 input[type=number]::-webkit-outer-spin-button.price,
 input[type=number]::-webkit-inner-spin-button.upc,
 input[type=number]::-webkit-outer-spin-button.upc {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    margin: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
 }
 
 input[type=number].price,
@@ -71,7 +71,6 @@ input[type=number].upc {
   cursor: pointer;
   color: #434b54;
   margin-bottom: 25px;
-
 
   a {
     width: 100%;

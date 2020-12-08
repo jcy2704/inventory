@@ -1,5 +1,8 @@
 class SalesController < ApplicationController
+  include ApplicationHelper
+
   def index
+    redirect_if_not_logged
     @sales = Sale.all.includes(:seller)
   end
 

@@ -16,6 +16,7 @@
 
 .login-form {
   @extend .form;
+
   width: 100%;
   margin-top: 20px;
   font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -59,6 +60,7 @@
 
 .register-form {
   @extend .login-form;
+
   margin-top: 20px;
 
   #user_role,
@@ -68,6 +70,7 @@
 
   input[type=submit] {
     @extend .login-btn;
+
     background: linear-gradient(#5fb523, #549e1f);
   }
 }
@@ -84,6 +87,7 @@
 
   input[type=submit] {
     @extend .login-btn;
+
     background: linear-gradient(#5fb523, #549e1f);
   }
 }
