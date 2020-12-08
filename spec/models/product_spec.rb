@@ -2,11 +2,6 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   it { should validate_presence_of(:name) }
-  it do
-    Group.create(name: 'Group')
-    Product.create(name: 'Product', quantity: 2, price: 12, group_id: 1)
-    should validate_uniqueness_of(:name)
-  end
 
   it { should validate_presence_of(:price) }
   it do
