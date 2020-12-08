@@ -10,6 +10,11 @@ ul {
   display: flex;
 }
 
+input[type=number].price,
+input[type=number].upc {
+  -moz-appearance: textfield;
+}
+
 input[type=number]::-webkit-inner-spin-button.price,
 input[type=number]::-webkit-outer-spin-button.price,
 input[type=number]::-webkit-inner-spin-button.upc,
@@ -20,9 +25,76 @@ input[type=number]::-webkit-outer-spin-button.upc {
   margin: 0;
 }
 
-input[type=number].price,
-input[type=number].upc {
-  -moz-appearance: textfield;
+.card {
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 6px 1px rgba(128, 128, 128, 0.253);
+  cursor: pointer;
+  color: #434b54;
+  margin-bottom: 25px;
+
+  a {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .left-deat,
+  .right-deat {
+    font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.3em;
+  }
+
+  .left-deat {
+    width: 500px;
+  }
+
+  .right-deat {
+    align-items: center;
+
+    .deat:first-child {
+      width: 200px;
+    }
+
+    .deat:not(:first-child) {
+      width: 150px;
+    }
+  }
+
+  .title {
+    font-family: 'PNovaB', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.3em;
+  }
+
+  .add-to {
+    padding: 20px;
+
+    a {
+      padding: 10px;
+    }
+  }
+
+  .product-btn {
+    display: flex;
+    align-items: center;
+
+    .out-stock {
+      width: 210px;
+      text-align: center;
+    }
+
+    .button_to {
+      input[type=submit] {
+        width: 210px;
+        background: linear-gradient(#3778c2, #2d619d);
+        border: 0;
+        padding: 0.5rem;
+        border-radius: 3px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 .all-products {
@@ -68,80 +140,8 @@ input[type=number].upc {
   }
 }
 
-.card {
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 0 6px 1px rgba(128, 128, 128, 0.253);
-  cursor: pointer;
-  color: #434b54;
-  margin-bottom: 25px;
-
-  a {
-    width: 100%;
-    padding: 20px;
-  }
-
-  .left-deat,
-  .right-deat {
-    font-family: 'PNovaL';
-    font-size: 1.2em;
-    line-height: 1.3em;
-  }
-
-  .left-deat {
-    width: 500px;
-  }
-
-  .right-deat {
-    align-items: center;
-
-    .deat:first-child {
-      width: 200px;
-    }
-
-    .deat:not(:first-child) {
-      width: 150px;
-    }
-  }
-
-  .title {
-    font-family: 'PNovaB';
-    font-size: 1.3em;
-  }
-
-  .add-to {
-    padding: 20px;
-
-    a {
-      padding: 10px;
-    }
-  }
-
-  .product-btn {
-    display: flex;
-    align-items: center;
-
-    .out-stock {
-      width: 210px;
-      text-align: center;
-    }
-
-    .button_to {
-      input[type=submit] {
-        width: 210px;
-        background: linear-gradient(#3778c2, #2d619d);
-        border: 0;
-        padding: 0.5rem;
-        border-radius: 3px;
-        color: white;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
 .center {
-  font-family: 'PNovaL';
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.2em;
   line-height: 1.3em;
   flex-direction: column;
