@@ -4,6 +4,10 @@ RSpec.describe User, type: :model do
   before :all do
     User.create(username: 'user', role: 'admin')
     User.create(username: 'employee', role: 'employee')
+    Group.create(name: 'Group')
+    Product.create(name: 'Product', quantity: 2, price: 12, group_id: 1)
+    Cart.create(id: 1)
+    LineItem.create(id: 1, quantity: 1, product_id: 1, cart_id: 1)
   end
 
   it { should validate_presence_of(:username) }
