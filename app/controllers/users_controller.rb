@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     redirect_if_not_logged
-    redirect_to root_path unless current_user.admin?
+    redirect_to root_path unless logged_in? && current_user.admin?
     @users = User.order(username: :asc).includes(:avatar_attachment)
   end
 
