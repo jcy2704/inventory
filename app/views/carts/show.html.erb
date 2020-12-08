@@ -1,9 +1,11 @@
 <div class="all-users">
   <h1 class="title">Cart</h1>
 
-  <div class="add-product delete-product">
-    <%= link_to "Empty cart", cart_path(@current_cart),method: :delete, data: {confirm: "Are you sure?"} %>
-  </div>
+  <% if @cart.line_items != [] %>
+    <div class="add-product delete-product">
+      <%= link_to "Empty cart", cart_path(@current_cart), method: :delete, data: {confirm: "Are you sure?"} %>
+    </div>
+  <% end %>
 </div>
 
 <ul class="cart-cards">
@@ -37,13 +39,14 @@
   <% end %>
 </ul>
 
+
+<% if @cart.line_items != [] %>
 <div class="flex footer">
   <div class="sub-total">
     <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-    <% if @cart.line_items != [] %>
-      <div class="sell-btn">
-        <%= button_to 'Sell', sales_path, method: :post %>
-      </div>
-    <% end %>
+    <div class="sell-btn">
+      <%= button_to 'Sell', sales_path, method: :post %>
+    </div>
   </div>
 </div>
+<% end %>
