@@ -77,7 +77,7 @@ The Cart will, of course, maintain track of the products that a client will buy.
 
 ## Live Demo
 
-[SIT - Social Media](http://sit-social-media.herokuapp.com/)
+[Inventory Transactions](http://inventory-transactions.herokuapp.com/)
 
 
 ## 💻 Getting Started
