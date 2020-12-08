@@ -23,10 +23,10 @@ class UsersController < ApplicationController
 
     if @user.save
       if logged_in?
-        redirect_to users_path
+        redirect_to users_path, succeeded: "#{@user.username.capitalize} Added Successfully"
       else
         new_current_user(@user)
-        redirect_to products_path, succeeded: "Welcome, #{@user.username.capitalize}"
+        redirect_to root_path, succeeded: "Welcome, #{@user.username.capitalize}"
       end
     else
       flash.now[:alert] = "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
