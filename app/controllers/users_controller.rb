@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
   def login
     exists?
-    redirect_to products_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
+    redirect_to root_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
   end
 
   def new_login
@@ -67,7 +67,7 @@ class UsersController < ApplicationController
       redirect_to login_path, alert: 'User does not exists.'
     else
       new_current_user(@user)
-      redirect_to products_path, succeeded: 'Logged In Successfully.'
+      redirect_to root_path, succeeded: 'Logged In Successfully.'
     end
   end
 
