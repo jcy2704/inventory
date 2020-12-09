@@ -7,5 +7,6 @@
   <%= g.text_field :name, class: 'name' %>
   <%= g.label :icon, 'Group Icon', class: 'label' %>
   <%= g.file_field :icon, class: 'avatar-field' %>
+  <%= hidden_field_tag :user_id, current_user.id, {id: 'group_user_id', name: 'group[user_id]'} %>
   <%= g.submit %>
 <% end %>

@@ -1,6 +1,6 @@
 module GroupsHelper
   def group_params
-    params.require(:group).permit(:name, :icon)
+    params.require(:group).permit(:name, :icon, :user_id)
   end
 
   def group_icon(group, class_name)

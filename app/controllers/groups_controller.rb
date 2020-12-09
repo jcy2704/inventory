@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     redirect_if_not_logged
-    @groups = Group.order(name: :asc)
+    @groups = Group.order(name: :asc).includes(:icon_attachment)
   end
 
   def new
