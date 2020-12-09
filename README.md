@@ -67,13 +67,13 @@ The Cart will, of course, maintain track of the products that a client will buy.
 
 ## Built With
 
-- Ruby v2.7.0
-- Ruby on Rails v6.0.3.4
-- Sass
-- PostgreSQL
-- RSpec
-- Capybara
-- Toastr
+- [Ruby v2.7.0](https://www.ruby-lang.org/en/)
+- [Ruby on Rails v6.0.3.4](https://rubyonrails.org/)
+- [Sass](https://sass-lang.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [RSpec](https://rspec.info/)
+- [Capybara](https://github.com/teamcapybara/capybara#using-capybara-with-rspec)
+- [Toastr](https://github.com/tylergannon/toastr-rails)
 
 ## Live Demo
 
@@ -86,9 +86,11 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.7.0
-Rails: 6.0.3.4
-Postgres: >=9.5
+Install [Ruby: 2.7.0](https://www.ruby-lang.org/en/documentation/installation/)
+
+Install [Rails: 6.0.3.4](https://guides.rubyonrails.org/v5.0/getting_started.html#installing-rails)
+
+Install [Postgres: >=9.5](https://www.postgresql.org/download/)
 
 ### Setup
 
@@ -126,7 +128,7 @@ Open `http://localhost:3000/` in your browser.
 
 In order to deploy this app to Heroku follow the steps below
 
-Install the Heroku CLI available [here](https://devcenter.heroku.com/articles/heroku-cli)
+Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 After that type the command to create the app and add the heroku repository to your project
 
@@ -137,10 +139,19 @@ After that type the command to create the app and add the heroku repository to y
 Then deploy the app.
 
 ```
-    git push -u heroku {your-branch}:master
+    git push heroku {your-branch}:master
 ```
 
 Change {your-branch} for the name of your local branch
+
+For example:
+```
+    git push heroku inventory:master
+```
+If you are deploying from the master branch you can just push with just master.
+```
+    git push heroku master
+```
 
 Follow the instructions on your terminal to get the URL where your app was deployed
 
