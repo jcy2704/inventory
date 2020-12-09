@@ -10,4 +10,10 @@ module GroupsHelper
       image_tag 'category.svg', class: class_name
     end
   end
+
+  def group_icon_remove(group)
+    return unless group.icon.attached?
+
+    link_to 'Remove', remove_icon_path(group.icon.id), method: :delete
+  end
 end
