@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
   has_many :sales
+  has_many :groups
 
   def admin?
     role == 'admin'
