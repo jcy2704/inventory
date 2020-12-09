@@ -34,12 +34,12 @@ a {
 aside {
   position: sticky;
   top: 0;
-  width: 18vw;
+  width: 22vw;
   height: 100vh;
 }
 
 main {
-  width: 83vw;
+  width: 100%;
 }
 
 .logout {
