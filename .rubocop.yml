@@ -1,7 +1,7 @@
 AllCops:
   Exclude:
     - "db/**/*"
-    - "bin/*" 
+    - "bin/*"
     - "config/**/*"
     - "Guardfile"
     - "Rakefile"
@@ -40,6 +40,9 @@ Style/DefWithParentheses:
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
 
+Layout/EndOfLine:
+  Enabled: false
+  EnforcedStyle: lf
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:

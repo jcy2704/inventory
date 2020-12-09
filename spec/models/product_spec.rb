@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'rails-helper'
 
 RSpec.describe Product, type: :model do
   before(:each) do
