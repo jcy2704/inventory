@@ -9,7 +9,7 @@ RSpec.describe 'Roles', type: :feature do
 
   it 'login as admin' do
     within('.login-form') do
-      fill_in 'Username',	with: 'user'
+      fill_in 'Username', with: 'user'
     end
     click_button 'Login'
     visit root_path
@@ -18,7 +18,7 @@ RSpec.describe 'Roles', type: :feature do
 
   it 'login as employee' do
     within('.login-form') do
-      fill_in 'Username',	with: 'employee'
+      fill_in 'Username', with: 'employee'
     end
     click_button 'Login'
     visit root_path

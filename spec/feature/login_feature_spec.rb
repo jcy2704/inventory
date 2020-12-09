@@ -9,7 +9,7 @@ RSpec.describe 'Login', type: :feature do
 
   it 'login if user exists' do
     within('.login-form') do
-      fill_in 'Username',	with: 'user'
+      fill_in 'Username', with: 'user'
     end
     click_button 'Login'
     expect(current_path).to eq(root_path)
@@ -17,7 +17,7 @@ RSpec.describe 'Login', type: :feature do
 
   scenario 'raise error if user doesnt exists', js: true do
     within('.login-form') do
-      fill_in 'Username',	with: 'test'
+      fill_in 'Username', with: 'test'
     end
     click_button 'Login'
     expect(page).to have_selector('.toast-bottom-right')
@@ -25,7 +25,7 @@ RSpec.describe 'Login', type: :feature do
 
   scenario 'raise error if field empty', js: true do
     within('.login-form') do
-      fill_in 'Username',	with: ''
+      fill_in 'Username', with: ''
     end
     click_button 'Login'
     expect(page).to have_selector('.toast-bottom-right')

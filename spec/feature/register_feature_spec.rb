@@ -8,7 +8,7 @@ RSpec.describe 'Register', type: :feature do
 
   it 'register with user' do
     within('.register-form') do
-      fill_in 'Username',	with: 'newuser'
+      fill_in 'Username',  with: 'newuser'
     end
     click_button 'Create User'
     expect(current_path).to eq(root_path)
@@ -16,7 +16,7 @@ RSpec.describe 'Register', type: :feature do
 
   scenario 'raise error if user exists', js: true do
     within('.register-form') do
-      fill_in 'Username',	with: 'user'
+      fill_in 'Username',  with: 'user'
     end
     click_button 'Create User'
     expect(page).to have_selector('.toast-bottom-right')
@@ -27,7 +27,7 @@ RSpec.describe 'Register', type: :feature do
 
   scenario 'raise error if field empty', js: true do
     within('.register-form') do
-      fill_in 'Username',	with: ''
+      fill_in 'Username',  with: ''
     end
     click_button 'Create User'
     expect(page).to have_selector('.toast-bottom-right')
@@ -38,7 +38,7 @@ RSpec.describe 'Register', type: :feature do
 
   scenario 'raise error if role empty', js: true do
     within('.register-form') do
-      fill_in 'Username',	with: 'test'
+      fill_in 'Username',  with: 'test'
       select '', from: 'Role'
     end
     click_button 'Create User'
