@@ -1,11 +1,7 @@
 <div class="all-users">
   <h1 class="title">Cart</h1>
 
-  <% if @cart.line_items != [] %>
-    <div class="add-product delete-product">
-      <%= link_to "Empty cart", cart_path(@current_cart), method: :delete, data: {confirm: "Are you sure?"} %>
-    </div>
-  <% end %>
+  <%= empty_cart(@cart) %>
 </div>
 
 <ul class="cart-cards">
@@ -16,9 +12,7 @@
           <div class="left-deat flex">
             <%= content_tag(:h3, item.product.name, class: 'title') %>
             <%= content_tag(:p, "Group: #{item.product.group.name}") %>
-            <% if !item.product.upc.nil? %>
-              <%= content_tag(:p, "UPC: #{item.product.upc}") %>
-            <% end %>
+            <%= upc_nil(item.product) %>
           </div>
           <div class="c-deat right-deat flex ">
             <%= content_tag(:p, "Price: #{number_to_currency(item.product.price)}") %>
@@ -40,13 +34,4 @@
 </ul>
 
 
-<% if @cart.line_items != [] %>
-<div class="flex footer">
-  <div class="sub-total">
-    <h3>Sub total: <%= number_to_currency(@cart.sub_total) %></h3>
-    <div class="sell-btn">
-      <%= button_to 'Sell', sales_path, method: :post %>
-    </div>
-  </div>
-</div>
-<% end %>
+<%= footer_cart(@cart) %>
