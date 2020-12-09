@@ -7,10 +7,7 @@
   <%= p.number_field :quantity, step: 1, min: 0, class: 'quantity' %>
   <%= p.label :upc, 'Universal Product Code (UPC)', class: 'label' %>
   <%= p.number_field :upc, min: 100000000000, max: 999999999999, class: 'upc' %>
-  <% if !Group.nil? %>
-    <%= p.label 'Group', class: 'label' %>
-    <%= p.select(:group_id, options_for_select(Group.all.collect { |group| [group.name, group.id] }, product_group_nil(@product)), include_blank: '') %>
-  <% end %>
+  <%= group_nil(p) %>
   <%= link_to  "Create Group", new_group_path, class: 'create-group' %>
   <%= p.submit %>
 <% end %>

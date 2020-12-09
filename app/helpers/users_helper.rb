@@ -8,16 +8,16 @@ module UsersHelper
     params.require(:user).permit(:username, :role, :avatar)
   end
 
-  def break_the_lines(text)
-    text.to_s.gsub(/\n/, '<br/>')
-  end
-
   def users_avatars(user, class_name)
     if user.avatar.attached?
       image_tag user.avatar, class: class_name
     else
       image_tag 'default.jpg', class: class_name
     end
+  end
+
+  def remove_avatar_btn(user)
+    link_to 'Remove', remove_avatar_path(@user.avatar.id), method: :delete if user.avatar.attached?
   end
 
   def not_current_user(users)
@@ -30,5 +30,19 @@ module UsersHelper
     else
       content_tag(:h1, 'Register')
     end
+  end
+
+  def role_form(user)
+    return unless !logged_in? || current_user.admin?
+
+    (user.label :role, 'Role', class: 'label') +
+      (user.select :role, options_for_select(%w[Admin Employee], @user.role.capitalize), include_blank: '')
+  end
+
+  def avatar_form(user)
+    return unless !logged_in? || @user == current_user
+
+    (user.label :avatar, 'Avatar', class: 'label') +
+      (user.file_field :avatar, class: 'avatar-field')
   end
 end

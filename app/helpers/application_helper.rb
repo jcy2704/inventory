@@ -16,4 +16,8 @@ module ApplicationHelper
 
     link_to 'All Users', users_path
   end
+
+  def back_btn
+    link_to '< Back', :back, class: 'back' if logged_in?
+  end
 end

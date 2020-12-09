@@ -6,9 +6,7 @@
           <div class="left-deat">
             <%= content_tag(:h3, p.name, class: 'title') %>
             <%= content_tag(:p, "Group: #{p.group.name}") %>
-            <% if !p.upc.nil? %>
-              <%= content_tag(:p, "UPC: #{p.upc}") %>
-            <% end %>
+            <%= upc_nil(p) %>
           </div>
           <div class="right-deat flex">
             <%= content_tag(:p, "Price: #{number_to_currency(p.price)}", class: 'deat') %>

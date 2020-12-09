@@ -26,4 +26,24 @@ module ProductsHelper
       product.group
     end
   end
+
+  def upc_nil(product)
+    return if product.upc.nil?
+
+    content_tag(:p, "UPC: #{product.upc}")
+  end
+
+  def group_nil(product)
+    return if Group.nil?
+
+    (product.label 'Group', class: 'label') +
+      product.select(
+        :group_id,
+        options_for_select(
+          Group.all.collect { |group| [group.name, group.id] },
+          product_group_nil(@product)
+        ),
+        include_blank: ''
+      )
+  end
 end

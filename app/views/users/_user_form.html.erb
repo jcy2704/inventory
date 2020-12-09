@@ -1,17 +1,9 @@
 <%= form_for @user, html: { class: 'register-form' } do |f| %>
   <%= users_avatars(@user, 'avatar-big') %>
-  <% if @user.avatar.attached? %>
-    <%= link_to  "Remove", remove_avatar_path(@user.avatar.id), method: :delete %>
-  <% end %>
+  <%= remove_avatar_btn(@user) %>
   <%= f.label :username, 'Username', class: 'label' %>
   <%= f.text_field :username, class: 'username' %>
-  <% if !logged_in? || current_user.admin? %>
-    <%= f.label :role, 'Role', class: 'label' %>
-    <%= f.select :role, options_for_select(%w[Admin Employee], @user.role.capitalize), include_blank: '' %>
-  <% end %>
-  <% if !logged_in? || @user == current_user %>
-    <%= f.label :avatar, 'Avatar', class: 'label' %>
-    <%= f.file_field :avatar, class: 'avatar-field' %>
-  <% end %>
+  <%= role_form(f) %>
+  <%= avatar_form(f) %>
   <%= f.submit %>
 <% end %>
