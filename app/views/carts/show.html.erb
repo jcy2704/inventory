@@ -24,9 +24,9 @@
             <%= content_tag(:p, "Price: #{number_to_currency(item.product.price)}") %>
             <div>
               QTY:
-              <%= link_to "-", line_item_reduce_path(id: item), method: :post %>
+              <%= link_to "-", reduce_line_item_path(id: item), method: :post %>
               <%= item.quantity %>
-              <%= link_to "+", line_item_add_path(id: item), method: :post %>
+              <%= link_to "+", add_line_item_path(id: item), method: :post %>
             </div>
           </div>
         </div>
