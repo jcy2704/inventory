@@ -6,6 +6,11 @@ class User < ApplicationRecord
   validates :role, presence: true, inclusion: { in: %w[admin employee] }
 
   has_one_attached :avatar
+
+  validates :avatar, presence: false, blob: {
+    content_type: ['image/png', 'image/jpg', 'image/jpeg'], size_range: 1..5.megabytes
+  }
+
   has_many :sales
   has_many :groups
 

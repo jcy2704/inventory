@@ -17,7 +17,9 @@ module UsersHelper
   end
 
   def remove_avatar_btn(user)
-    link_to 'Remove', remove_avatar_path(@user.avatar.id), method: :delete if user.avatar.attached?
+    return if user.avatar.id.nil?
+
+    link_to 'Remove', remove_avatar_path(user.avatar.id), method: :delete if user.avatar.attached?
   end
 
   def not_current_user(users)

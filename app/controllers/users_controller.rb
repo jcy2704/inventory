@@ -53,6 +53,9 @@ class UsersController < ApplicationController
       redirect_back(fallback_location: root_path)
     elsif @user.save
       redirect_back(fallback_location: root_path)
+    else
+      flash.now[:alert] = "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
+      render :edit
     end
   end
 

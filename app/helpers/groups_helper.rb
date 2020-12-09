@@ -12,7 +12,7 @@ module GroupsHelper
   end
 
   def group_icon_remove(group)
-    return unless group.icon.attached?
+    return unless group.icon.attached? && !group.icon.id.nil?
 
     link_to 'Remove', remove_icon_path(group.icon.id), method: :delete
   end

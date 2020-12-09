@@ -50,6 +50,8 @@ GEM
       activejob (= 6.0.3.4)
       activerecord (= 6.0.3.4)
       marcel (~> 0.3.1)
+    activestorage-validator (0.1.3)
+      rails (>= 5.2.0)
     activesupport (6.0.3.4)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -76,19 +78,11 @@ GEM
       regexp_parser (~> 1.5)
       xpath (~> 3.2)
     childprocess (3.0.0)
-    coffee-rails (4.2.2)
-      coffee-script (>= 2.2.0)
-      railties (>= 4.0.0)
-    coffee-script (2.4.1)
-      coffee-script-source
-      execjs
-    coffee-script-source (1.12.2)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     database_cleaner (1.8.5)
     diff-lcs (1.4.4)
     erubi (1.10.0)
-    execjs (2.7.0)
     ffi (1.13.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -234,12 +228,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activestorage-validator
   allow_numeric
   bootsnap (>= 1.4.2)
   bullet
   byebug
   capybara
-  coffee-rails
   database_cleaner
   jbuilder (~> 2.7)
   listen (~> 3.2)
