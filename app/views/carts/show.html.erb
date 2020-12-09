@@ -5,7 +5,7 @@
 </div>
 
 <ul class="cart-cards">
-  <% @cart.line_items.each do |item| %>
+  <% @cart.line_items.includes(:product).each do |item| %>
     <li class="card">
       <div class="flex cart-card">
         <div class="flex">
