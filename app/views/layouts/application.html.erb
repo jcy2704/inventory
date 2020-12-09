@@ -10,43 +10,62 @@
   </head>
 
   <body>
-    <header class="header">
-      <nav class="navbar">
-        <% if logged_in? %>
-          <div class="nav-left">
+    <div class="flex body">
+      <% if logged_in? %>
+      <aside>
+        <nav class="nav-aside">
+          <ul>
+            <li>
+              <div class="flex profile-a">
+                <a href=<%= edit_user_path(current_user.id) %>>
+                  <%= avatar_attached %>
+                </a>
+                <%= link_to current_user.username.capitalize , edit_user_path(current_user.id), class: 'username' %>
+              </div>
+              <div>
+                <%= link_to  'Cart', cart_path(@current_cart), class: 'cart' %>
+                <%= link_to 'Logout', logout_path %>
+              </div>
+            </li>
+            <li>
               <%= link_to 'Sales', sales_path %>
+            </li>
+            <li>
               <%= link_to 'Products', products_path %>
+            </li>
+            <li>
               <%= link_to 'Groups', groups_path %>
+            </li>
+            <li>
               <%= only_admins %>
-          </div>
-        <% end %>
-        <div class="nav-right">
-          <% if logged_in? %>
-            <div class="profile">
-              <a href=<%= edit_user_path(current_user.id) %>>
-                <%= avatar_attached %>
-              </a>
-              <%= link_to current_user.username.capitalize , edit_user_path(current_user.id) %>
-            </div>
-            <%= link_to  'Cart', cart_path(@current_cart), class: 'profile' %>
-            <%= link_to 'Logout', logout_path %>
-          <% else %>
-            <%= link_to 'Login', login_path, class: 'profile' %>
-            <%= link_to 'Register', new_user_path %>
-          <% end %>
-        </div>
-      </nav>
-    </header>
-    <main>
-    <%= yield %>
-    </main>
-      <% unless flash.empty? %>
-        <script type="text/javascript">
-          <% flash.each do |t, f| %>
-            <% type = t.to_s.gsub('alert', 'error').gsub('notice', 'info').gsub('succeeded', 'success') %>
-            toastr['<%= type %>']('<%= f %>');
-          <% end %>
-        </script>
+            </li>
+          </ul>
+        </nav>
+      </aside>
       <% end %>
+      <main class=<%= 'logout' if !logged_in?%>>
+        <% if !logged_in? %>
+          <header class="header">
+            <nav class="navbar">
+              <div class="nav-logout">
+                <%= link_to 'Login', login_path, class: 'profile' %>
+                <%= link_to 'Register', new_user_path %>
+              </div>
+            </nav>
+          </header>
+        <% end %>
+        <div class="main">
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+    <% unless flash.empty? %>
+      <script type="text/javascript">
+        <% flash.each do |t, f| %>
+          <% type = t.to_s.gsub('alert', 'error').gsub('notice', 'info').gsub('succeeded', 'success') %>
+          toastr['<%= type %>']('<%= f %>');
+        <% end %>
+      </script>
+    <% end %>
   </body>
 </html>
