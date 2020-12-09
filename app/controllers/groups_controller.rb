@@ -34,7 +34,7 @@ class GroupsController < ApplicationController
     if @group.update(group_params)
       redirect_to group_path(@group.id), succeeded: "#{@group.name} Updated Successfully"
     else
-      flash.now[:alert] = "#{errors_s(@group)[0]} #{errors_s(@group)[1]} #{errors_s(@group)[2]}‏‏‎ #{errors_s(@group)[3]}"
+      flash.now[:alert] = "#{errors_s(@group)[0]} #{errors_s(@group)[1]} #{errors_s(@group)[2]}‏‏‎"
       render :edit
     end
   end
