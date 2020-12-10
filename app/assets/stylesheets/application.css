@@ -53,7 +53,7 @@ main {
   text-align: center;
   padding: 100px 20px 20px;
   height: 100%;
-  background: linear-gradient(#3778c2, #2d619d);
+  background: linear-gradient(#3778c2, #2d619d 9%);
   position: sticky;
 }
 
@@ -107,10 +107,4 @@ main {
 
 .profile {
   padding-right: 20px;
-}
-
-h1 {
-  color: #434b54;
-  font-family: 'PNovaB', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  text-transform: uppercase;
 }

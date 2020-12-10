@@ -1,24 +1,28 @@
-<div class="all-groups">
-  <h1 class="title">All Groups</h1>
-
-  <div class="add-group">
-    <%= link_to 'Create Group', new_group_path %>
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title">All Groups</h1>
   </div>
 </div>
 
-<ul class="group-cards">
-  <% @groups.each do |g| %>
-    <li class="card g-card">
-      <a href=<%= group_path(g.id) %>>
-        <div class="flex">
-          <%= group_icon(g, 'icon') %>
-          <div class='details'>
-            <%= content_tag(:h3, g.name.titleize, class: 'title') %>
-            <%= content_tag(:p, "Products: #{g.products.count}", class: 'deat') %>
-            <%= content_tag(:p, "Organizer: #{g.organizer.username.capitalize}", class: 'deat') %>
+<div class="main">
+  <ul class="group-cards">
+    <% @groups.each do |g| %>
+      <li class="card g-card">
+        <a href=<%= group_path(g.id) %>>
+          <div class="flex">
+            <%= group_icon(g, 'icon') %>
+            <div class='details'>
+              <%= content_tag(:h3, g.name.titleize, class: 'title') %>
+              <%= content_tag(:p, "Products: #{g.products.count}", class: 'deat') %>
+              <%= content_tag(:p, "Organizer: #{g.organizer.username.capitalize}", class: 'deat') %>
+            </div>
           </div>
-        </div>
-      </a>
-    </li>
-  <% end %>
-</ul>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="add-btn">
+  <%= link_to 'Create Group', new_group_path %>
+</div>

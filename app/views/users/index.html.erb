@@ -1,24 +1,28 @@
-<div class="all-users">
-  <h1 class="title">All Users</h1>
-
-  <div class="add-user">
-    <%= link_to 'Add User', new_user_path %>
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title">All Users</h1>
   </div>
 </div>
 
-<ul class="user-cards">
-  <% not_current_user(@users).each do |u| %>
-    <li class="card g-card">
-      <a href=<%= edit_user_path(u.id) %>>
-        <div class="flex">
-          <%=  users_avatars(u, 'avatar-show') %>
-          <div class='details'>
-            <%= content_tag(:h3, u.username.titleize, class: 'title') %>
-            <%= content_tag(:p, "Role: #{u.role.capitalize}", class: 'deat') %>
-            <%= content_tag(:p, "Sales: #{u.sales.count}", class: 'deat') %>
+<div class="main">
+  <ul class="user-cards">
+    <% not_current_user(@users).each do |u| %>
+      <li class="card g-card">
+        <a href=<%= edit_user_path(u.id) %>>
+          <div class="flex">
+            <%=  users_avatars(u, 'avatar-show') %>
+            <div class='details'>
+              <%= content_tag(:h3, u.username.titleize, class: 'title') %>
+              <%= content_tag(:p, "Role: #{u.role.capitalize}", class: 'deat') %>
+              <%= content_tag(:p, "Sales: #{u.sales.count}", class: 'deat') %>
+            </div>
           </div>
-        </div>
-      </a>
-    </li>
-  <% end %>
-</ul>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="add-btn">
+  <%= link_to 'Add User', new_user_path %>
+</div>

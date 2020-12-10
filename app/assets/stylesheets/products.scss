@@ -130,16 +130,6 @@ input[type=number]::-webkit-outer-spin-button.upc {
   }
 }
 
-.all-groups,
-.all-users {
-  @extend .all-products;
-
-  .add-group,
-  .add-user {
-    @extend .add-product;
-  }
-}
-
 .center {
   font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.2em;

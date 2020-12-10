@@ -1,9 +1,13 @@
-<div class="all-products">
-  <h1 class="title">All Products</h1>
-
-  <div class="add-product">
-    <%= link_to 'Add Product', new_product_path %>
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title">All Products</h1>
   </div>
 </div>
 
-<%= render partial: 'products_cards' %>
+<div class="main">
+  <%= render partial: 'products_cards' %>
+</div>
+
+<div class="add-btn">
+  <%= link_to 'Add Product', new_product_path %>
+</div>

@@ -22,4 +22,12 @@ module SalesHelper
       image_tag 'category.svg', class: class_name
     end
   end
+
+  def revenue(sale)
+    revenue = 0
+    sale.all.each do |s|
+      revenue += total_sale(s)
+    end
+    revenue
+  end
 end
