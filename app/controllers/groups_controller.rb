@@ -18,6 +18,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, succeeded: "#{@group.name} Created Successfully"
     else
+      flash.now[:alert] = "#{errors_s(@group)[0]} #{errors_s(@group)[1]}"
       render :new
     end
   end

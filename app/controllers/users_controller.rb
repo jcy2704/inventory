@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if !logged_in? || current_user.admin?
       @user = User.new
     elsif logged_in? && !current_user.admin?
-      redirect_to products_path, notice: "#{current_user.username.capitalize}, you are already signed in."
+      redirect_to root_path, notice: "#{current_user.username.capitalize}, you are already signed in."
     end
   end
 

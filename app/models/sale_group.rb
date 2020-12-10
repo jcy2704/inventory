@@ -1,5 +1,5 @@
 class SaleGroup < ApplicationRecord
-  validates :name, presence: true, length: { minimum: 4 }
+  validates :name, presence: true, uniqueness: true, length: { minimum: 4 }
 
   belongs_to :creator, class_name: 'User', foreign_key: 'user_id'
   has_and_belongs_to_many :sales

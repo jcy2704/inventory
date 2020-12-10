@@ -17,6 +17,7 @@ RSpec.describe SalesHelper, type: :helper do
     group = Group.create(name: 'group', user_id: user.id)
     product = Product.create(name: 'product', price: '12', quantity: 144, group_id: group.id)
     a = LineItem.create(quantity: 1, product_id: product.id, cart_id: cart.id)
+    product.line_items << a
     sales = Sale.create(user_id: user.id)
     sales.line_items << a
   end
@@ -25,8 +26,6 @@ RSpec.describe SalesHelper, type: :helper do
 
   describe 'total_sale' do
     it 'return total sale' do
-      p User.all
-      p sales
       expect(total_sale(sales)).to eq(12)
     end
   end
