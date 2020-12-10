@@ -17,7 +17,7 @@ module CartsHelper
     '<div class="flex footer"><div class="sub-total"><h3>Sub total: '.html_safe +
       number_to_currency(cart.sub_total).to_s +
       '</h3><div class="sell-btn">'.html_safe +
-      (button_to 'Sell', sales_path, method: :post) +
+      (button_to 'Sell', new_sale_path, method: :get) +
       '</div></div></div>'.html_safe
   end
 end

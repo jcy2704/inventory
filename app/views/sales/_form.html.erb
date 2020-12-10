@@ -1,0 +1,6 @@
+<%= form_for @sale, html: { class: 'new_group'} do |g| %>
+  <%= sale_group(g) %>
+  <%= link_to  "Create Sale Group", new_sale_group_path, class: 'create-group' %>
+  <%= hidden_field_tag :user_id, current_user.id, {id: 'sale_group_user_id', name: 'sale_group[user_id]'} %>
+  <%= g.submit %>
+<% end %>
