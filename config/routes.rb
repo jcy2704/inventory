@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   resources :users, except: %i[show]
   resources :products, :groups, :sale_groups, except: %i[destroy]
-  resources :sales, except: %i[destroy edit]
   resources :carts, only: %i[show destroy]
 
   get '/login', to: 'users#login'
@@ -19,6 +18,12 @@ Rails.application.routes.draw do
     member do
       post 'add', to: "line_items#add_quantity"
       post 'reduce', to: "line_items#reduce_quantity"
+    end
+  end
+
+  resources :sales, except: %i[destroy edit] do
+    collection do
+      get 'individual_sales', to: 'sales#individual', as: 'individual'
     end
   end
 end

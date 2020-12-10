@@ -36,4 +36,8 @@ class SalesController < ApplicationController
   def show
     @sale = Sale.find(params[:id])
   end
+
+  def individual
+    @sales = Sale.not_grouped.order(created_at: :desc)
+  end
 end
