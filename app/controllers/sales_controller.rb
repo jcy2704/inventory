@@ -6,8 +6,13 @@ class SalesController < ApplicationController
     @sales = Sale.order(created_at: :desc).includes(:seller, :line_items)
   end
 
+  def new
+    @sale = Sale.new
+  end
+
   def create
     @sale = Sale.new
+    @sale_group = SaleGroup.find(params[:id])
     @sale.seller = current_user
     @current_cart.line_items.each do |item|
       @sale.line_items << item
@@ -15,7 +20,7 @@ class SalesController < ApplicationController
     end
 
     @sale.save
-
+    @sale.sale_groups << @sale_group
     @sale.line_items.each do |x|
       p = Product.find(x.product_id)
       p.update(quantity: p.quantity -= x.quantity)

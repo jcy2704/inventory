@@ -1,0 +1,10 @@
+<%= form_for @sale_group, html: { class: 'new_group'} do |g| %>
+  <%= group_icon(@sale_group, 'icon-big') %>
+  <%= sale_group_icon_remove(@sale_group) %>
+  <%= g.label :name, 'Group Name', class: 'label' %>
+  <%= g.text_field :name, class: 'name' %>
+  <%= g.label :icon, 'Group Icon', class: 'label' %>
+  <%= g.file_field :icon, class: 'avatar-field' %>
+  <%= hidden_field_tag :user_id, current_user.id, {id: 'sale_group_user_id', name: 'sale_group[user_id]'} %>
+  <%= g.submit %>
+<% end %>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   delete '/icon_delete/:id', to: 'groups#remove_icon', as: 'remove_icon'
 
-  delete '/icon_delete/:id', to: 'sale_groups#remove_icon', as: 'remove_icon'
+  delete '/icon_delete/:id', to: 'sale_groups#remove_icon', as: 'sale_remove_icon'
 
   resources :line_items, only: %i[create show destroy] do
     member do
