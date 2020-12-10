@@ -3,7 +3,7 @@ module ProductsHelper
     if product.quantity.zero?
       link_to 'OUT OF STOCK', edit_product_path(product.id), class: 'out-stock'
     else
-      button_to "Add #{product.name} to Cart", line_items_path(product_id: product.id)
+      button_to "Add #{product.name.titleize} to Cart", line_items_path(product_id: product.id)
     end
   end
 
@@ -36,7 +36,7 @@ module ProductsHelper
       product.select(
         :group_id,
         options_for_select(
-          Group.all.collect { |group| [group.name.capitalize, group.id] },
+          Group.all.collect { |group| [group.name.titleize, group.id] },
           product_group_nil(@product)
         ),
         include_blank: ''

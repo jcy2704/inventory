@@ -5,6 +5,7 @@ RSpec.describe Product, type: :model do
     Group.create(name: 'Group')
     Product.create(name: 'Product', quantity: 2, price: 12, group_id: 1)
   end
+
   it { should validate_presence_of(:name) }
 
   it { should validate_presence_of(:price) }

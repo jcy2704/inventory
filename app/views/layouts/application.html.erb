@@ -20,7 +20,7 @@
                 <a href=<%= edit_user_path(current_user.id) %>>
                   <%= avatar_attached %>
                 </a>
-                <%= link_to current_user.username.capitalize , edit_user_path(current_user.id), class: 'username' %>
+                <%= link_to current_user.username.titleize , edit_user_path(current_user.id), class: 'username' %>
               </div>
               <%= link_to 'Logout', logout_path, class: 'logout-btn' %>
             </li>

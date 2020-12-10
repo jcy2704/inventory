@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if !logged_in? || current_user.admin?
       @user = User.new
     elsif logged_in? && !current_user.admin?
-      redirect_to root_path, notice: "#{current_user.username.capitalize}, you are already signed in."
+      redirect_to root_path, notice: "#{current_user.username.titleize}, you are already signed in."
     end
   end
 
@@ -23,10 +23,10 @@ class UsersController < ApplicationController
 
     if @user.save
       if logged_in?
-        redirect_to users_path, succeeded: "#{@user.username.capitalize} Added Successfully"
+        redirect_to users_path, succeeded: "#{@user.username.titleize} Added Successfully"
       else
         new_current_user(@user)
-        redirect_to root_path, succeeded: "Welcome, #{@user.username.capitalize}"
+        redirect_to root_path, succeeded: "Welcome, #{@user.username.titleize}"
       end
     else
       flash.now[:alert] = "#{errors_s(@user)[0]} #{errors_s(@user)[1]} #{errors_s(@user)[2]}‏‏‎ #{errors_s(@user)[3]}"
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
   def login
     exists?
-    redirect_to root_path, notice: "#{current_user.username.capitalize}, you are already signed in." if logged_in?
+    redirect_to root_path, notice: "#{current_user.username.titleize}, you are already signed in." if logged_in?
   end
 
   def new_login

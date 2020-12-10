@@ -22,7 +22,7 @@ RSpec.describe 'Add Product', type: :feature do
     expect(current_path).to eq(new_product_path)
   end
 
-  it 'create new group' do
+  it 'create new product' do
     visit '/products'
     click_link 'Add Product'
 

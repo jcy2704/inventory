@@ -29,7 +29,7 @@ module UsersHelper
     return unless !logged_in? || current_user.admin?
 
     (user.label :role, 'Role', class: 'label') +
-      (user.select :role, options_for_select(%w[Admin Employee], @user.role.capitalize), include_blank: '')
+      (user.select :role, options_for_select(%w[Admin Employee], @user.role.titleize), include_blank: '')
   end
 
   def avatar_form(user)

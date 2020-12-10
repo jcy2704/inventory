@@ -14,7 +14,7 @@
             <div class='details'>
               <%= content_tag(:h3, g.name.titleize, class: 'title') %>
               <%= content_tag(:p, "Sales: #{g.sales.count}", class: 'deat') %>
-              <%= content_tag(:p, "Creator: #{g.creator.username.capitalize}", class: 'deat') %>
+              <%= content_tag(:p, "Creator: #{g.creator.username.titleize}", class: 'deat') %>
               <%= content_tag(:p, "Created at #{g.created_at.localtime.strftime('%d/%m/%Y %H:%M')}") %>
             </div>
           </div>

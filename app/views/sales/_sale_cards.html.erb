@@ -10,7 +10,7 @@
               Sale Nº <%= s.id %>
             </li>
             <li>
-              Sold by <%= s.seller.username.capitalize %>
+              Sold by <%= s.seller.username.titleize %>
             </li>
             <li>
               Sale Made at <%= s.created_at.localtime.strftime('%d/%m/%Y %H:%M') %>

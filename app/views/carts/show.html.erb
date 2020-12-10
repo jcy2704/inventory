@@ -13,8 +13,8 @@
         <div class="flex cart-card">
           <div class="flex">
             <div class="left-deat flex">
-              <%= content_tag(:h3, item.product.name, class: 'title') %>
-              <%= content_tag(:p, "Group: #{item.product.group.name}") %>
+              <%= content_tag(:h3, item.product.name.titleize, class: 'title') %>
+              <%= content_tag(:p, "Group: #{item.product.group.name.titleize}") %>
               <%= upc_nil(item.product) %>
             </div>
             <div class="c-deat right-deat flex ">

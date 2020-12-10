@@ -4,8 +4,8 @@
       <div class="flex">
         <a class="flex" href=<%= edit_product_path(p.id) %>>
           <div class="left-deat">
-            <%= content_tag(:h3, p.name, class: 'title') %>
-            <%= content_tag(:p, "Group: #{p.group.name.capitalize}") %>
+            <%= content_tag(:h3, p.name.titleize, class: 'title') %>
+            <%= content_tag(:p, "Group: #{p.group.name.titleize}") %>
             <%= upc_nil(p) %>
           </div>
           <div class="right-deat flex">
