@@ -27,7 +27,7 @@ module SalesHelper
 
   def revenue(sale)
     revenue = 0
-    sale.all.each do |s|
+    sale.each do |s|
       revenue += total_sale(s)
     end
     revenue
