@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   root to: 'products#index'
 
   resources :users, except: %i[show]
-  resources :products, :groups, except: %i[destroy]
-  resources :sales, except: %i[new destroy edit]
+  resources :products, :groups, :sale_groups, except: %i[destroy]
+  resources :sales, except: %i[destroy edit]
   resources :carts, only: %i[show destroy]
 
   get '/login', to: 'users#login'
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   delete '/avatar_delete/:id', to: 'users#remove_avatar', as: 'remove_avatar'
 
   delete '/icon_delete/:id', to: 'groups#remove_icon', as: 'remove_icon'
+
+  delete '/icon_delete/:id', to: 'sale_groups#remove_icon', as: 'remove_icon'
 
   resources :line_items, only: %i[create show destroy] do
     member do

@@ -13,6 +13,7 @@ class User < ApplicationRecord
 
   has_many :sales
   has_many :groups
+  has_many :sale_groups
 
   def admin?
     role == 'admin'

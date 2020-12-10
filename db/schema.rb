@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_070030) do
+ActiveRecord::Schema.define(version: 2020_12_10_072508) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,18 +79,14 @@ ActiveRecord::Schema.define(version: 2020_12_10_070030) do
   end
 
   create_table "sale_groups_sales", id: false, force: :cascade do |t|
-    t.bigint "sale_id", null: false
     t.bigint "sale_group_id", null: false
-    t.index ["sale_group_id"], name: "index_sale_groups_sales_on_sale_group_id"
-    t.index ["sale_id"], name: "index_sale_groups_sales_on_sale_id"
+    t.bigint "sale_id", null: false
   end
 
   create_table "sales", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "sale_group_id", null: false
-    t.index ["sale_group_id"], name: "index_sales_on_sale_group_id"
     t.index ["user_id"], name: "index_sales_on_user_id"
   end
 
@@ -106,6 +102,5 @@ ActiveRecord::Schema.define(version: 2020_12_10_070030) do
   add_foreign_key "groups", "users"
   add_foreign_key "products", "groups"
   add_foreign_key "sale_groups", "users"
-  add_foreign_key "sales", "sale_groups"
   add_foreign_key "sales", "users"
 end
