@@ -36,7 +36,7 @@ module SalesHelper
   def group?(sale)
     return if sale.sale_groups.first.nil?
 
-    '<li> Group:'.html_safe +
+    '<li> Group: '.html_safe +
       sale.sale_groups.first.name.titleize +
       '</li>'.html_safe
   end
