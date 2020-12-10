@@ -28,8 +28,8 @@ RSpec.describe 'Add Product', type: :feature do
 
     within('.new_product') do
       fill_in 'Product Name', with: 'Product'
-      fill_in 'Price',	with: 12
-      fill_in 'Quantity',	with: 140
+      fill_in 'Price', with: 12
+      fill_in 'Quantity', with: 140
       select 'Test', from: 'product_group_id'
     end
     click_button 'Create Product'
@@ -43,8 +43,8 @@ RSpec.describe 'Add Product', type: :feature do
 
     within('.new_product') do
       fill_in 'Product Name', with: 'test'
-      fill_in 'Price',	with: 12
-      fill_in 'Quantity',	with: 140
+      fill_in 'Price', with: 12
+      fill_in 'Quantity', with: 140
       select 'Test', from: 'product_group_id'
     end
     click_button 'Create Product'
@@ -61,8 +61,8 @@ RSpec.describe 'Add Product', type: :feature do
 
     within('.new_product') do
       fill_in 'Product Name', with: ''
-      fill_in 'Price',	with: ''
-      fill_in 'Quantity',	with: ''
+      fill_in 'Price', with: ''
+      fill_in 'Quantity', with: ''
       select '', from: 'product_group_id'
     end
     click_button 'Create Product'
