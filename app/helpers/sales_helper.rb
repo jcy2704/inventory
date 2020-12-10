@@ -32,4 +32,12 @@ module SalesHelper
     end
     revenue
   end
+
+  def group?(sale)
+    return if sale.sale_groups.first.nil?
+
+    '<li>'.html_safe +
+      sale.sale_groups.first.name.titleize +
+      '</li>'.html_safe
+  end
 end

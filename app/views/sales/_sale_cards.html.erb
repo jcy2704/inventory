@@ -12,6 +12,7 @@
             <li>
               Sold by <%= s.seller.username.titleize %>
             </li>
+            <%= group?(s) %>
             <li>
               Sale Made at <%= s.created_at.localtime.strftime('%d/%m/%Y %H:%M') %>
             </li>
