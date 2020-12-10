@@ -19,7 +19,7 @@ RSpec.describe 'Add Product', type: :feature do
     visit '/products'
     click_button 'Add Test to Cart'
 
-    expect(current_path).to eq(cart_path(@current_cart))
+    expect(page).to have_content 'Test'
   end
 
   it 'create sale with group' do

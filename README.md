@@ -120,7 +120,7 @@ Open `http://localhost:3000/` in your browser.
 ### Run tests
 
 ```
-    rpsec --format documentation
+    rpsec --format doc --seed 26900
 ```
 
 
