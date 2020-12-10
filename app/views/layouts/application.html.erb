@@ -22,23 +22,27 @@
                 </a>
                 <%= link_to current_user.username.capitalize , edit_user_path(current_user.id), class: 'username' %>
               </div>
-              <div>
-                <%= link_to  'Cart', cart_path(@current_cart), class: 'cart' %>
-                <%= link_to 'Logout', logout_path %>
-              </div>
+              <%= link_to 'Logout', logout_path, class: 'logout-btn' %>
             </li>
-            <li>
-              <%= link_to 'Sales', sales_path %>
-            </li>
-            <li>
-              <%= link_to 'Products', products_path %>
-            </li>
-            <li>
-              <%= link_to 'Groups', groups_path %>
-            </li>
-            <li>
-              <%= only_admins %>
-            </li>
+            <ul class="main-nav">
+              <li>
+                <div>
+                  <%= icon('fas', 'shopping-cart') %> <%= link_to 'Cart', cart_path(@current_cart), class: 'cart' %>
+                </div>
+              </li>
+              <li>
+                <%= icon('fas', 'piggy-bank') %> <%= link_to 'Sales', sales_path %>
+              </li>
+              <li>
+                <%= icon('fas', 'cubes') %> <%= link_to 'Products', products_path %>
+              </li>
+              <li>
+                <%= icon('fas', 'layer-group') %> <%= link_to 'Groups', groups_path %>
+              </li>
+              <li>
+                <%= icon('fas', 'users') %> <%= only_admins %>
+              </li>
+            </ul>
           </ul>
         </nav>
       </aside>

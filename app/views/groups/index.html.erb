@@ -1,6 +1,6 @@
 <div class="top">
   <div class="title-cont">
-    <h1 class="title">All Groups</h1>
+    <h1 class="title"><%= icon('fas', 'layer-group') %> All Groups</h1>
   </div>
 </div>
 
@@ -15,6 +15,7 @@
               <%= content_tag(:h3, g.name.titleize, class: 'title') %>
               <%= content_tag(:p, "Products: #{g.products.count}", class: 'deat') %>
               <%= content_tag(:p, "Organizer: #{g.organizer.username.capitalize}", class: 'deat') %>
+              <%= content_tag(:p, "Created at #{g.created_at.localtime.strftime('%d/%m/%Y %H:%M')}") %>
             </div>
           </div>
         </a>
