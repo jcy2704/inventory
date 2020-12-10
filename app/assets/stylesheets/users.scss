@@ -14,6 +14,29 @@
   margin-bottom: 8px;
 }
 
+.add-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 18.03vw;
+  background: #5fb523;
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  border-top: 1px solid rgba(128, 128, 128, 0.356);
+  padding: 20px;
+
+  a {
+    padding: 15px;
+    display: block;
+    border: 1px solid white;
+    text-align: center;
+    width: 100%;
+    border-radius: 3px;
+  }
+}
+
 .login-form {
   @extend .form;
 
@@ -153,29 +176,5 @@
 
   .back {
     padding: 25px;
-  }
-}
-
-.add-btn {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  left: 18.03vw;
-  background: #5fb523;
-  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 2em;
-  text-transform: uppercase;
-  color: white;
-  border-top: 1px solid rgba(128, 128, 128, 0.356);
-  padding: 20px;
-
-  a {
-    padding: 15px;
-    display: block;
-    border: 1px solid white;
-    text-align: center;
-    width: 100%;
-    border-radius: 3px;
-
   }
 }

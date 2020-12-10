@@ -38,6 +38,6 @@ class SalesController < ApplicationController
   end
 
   def individual
-    @sales = Sale.not_grouped.order(created_at: :desc)
+    @sales = Sale.not_grouped.order(created_at: :desc).includes(:line_items, :seller)
   end
 end

@@ -38,7 +38,7 @@ class SaleGroupsController < ApplicationController
 
   def show
     @sale_group = SaleGroup.find(params[:id])
-    @sales = @sale_group.sales.order(created_at: :desc)
+    @sales = @sale_group.sales.order(created_at: :desc).includes(:line_items, :seller)
   end
 
   def remove_icon
