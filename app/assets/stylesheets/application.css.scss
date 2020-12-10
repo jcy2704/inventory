@@ -15,6 +15,9 @@
  *= require toastr
  */
 
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
 * {
   margin: 0;
   padding: 0;
@@ -103,6 +106,10 @@ main {
 
 .main {
   padding: 25px;
+}
+
+.card-list {
+  padding-bottom: 105px;
 }
 
 .profile {

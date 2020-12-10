@@ -20,7 +20,7 @@ RSpec.describe 'Login', type: :feature do
       fill_in 'Username', with: 'test'
     end
     click_button 'Login'
-    expect(page).to have_selector('.toast-bottom-right')
+    expect(page).to have_selector('#toast-container')
   end
 
   scenario 'raise error if field empty', js: true do
@@ -28,6 +28,6 @@ RSpec.describe 'Login', type: :feature do
       fill_in 'Username', with: ''
     end
     click_button 'Login'
-    expect(page).to have_selector('.toast-bottom-right')
+    expect(page).to have_selector('#toast-container')
   end
 end

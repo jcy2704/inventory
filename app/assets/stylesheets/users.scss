@@ -115,6 +115,7 @@
   height: 150px;
   margin: 0 auto 30px;
 }
+
 .top {
   position: sticky;
   top: 0;
@@ -148,13 +149,18 @@
 
 .back-btn {
   text-align: left;
+  padding-left: 0;
+
+  .back {
+    padding: 25px;
+  }
 }
 
 .add-btn {
   position: fixed;
   bottom: 0;
   right: 0;
-  left: 18.05vw;
+  left: 18.03vw;
   background: #5fb523;
   font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 2em;

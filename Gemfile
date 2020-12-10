@@ -9,6 +9,8 @@ gem 'allow_numeric'
 
 gem 'bullet', group: 'development'
 
+gem 'font-awesome-sass'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use pg as the database for Active Record

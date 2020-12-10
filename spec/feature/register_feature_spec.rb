@@ -19,7 +19,7 @@ RSpec.describe 'Register', type: :feature do
       fill_in 'Username', with: 'user'
     end
     click_button 'Create User'
-    expect(page).to have_selector('.toast-bottom-right')
+    expect(page).to have_selector('#toast-container')
     within('#toast-container') do
       expect(page).to have_text('Username has already been taken')
     end
@@ -30,7 +30,7 @@ RSpec.describe 'Register', type: :feature do
       fill_in 'Username', with: ''
     end
     click_button 'Create User'
-    expect(page).to have_selector('.toast-bottom-right')
+    expect(page).to have_selector('#toast-container')
     within('#toast-container') do
       expect(page).to have_text("Username can't be blank")
     end
@@ -42,7 +42,7 @@ RSpec.describe 'Register', type: :feature do
       select '', from: 'Role'
     end
     click_button 'Create User'
-    expect(page).to have_selector('.toast-bottom-right')
+    expect(page).to have_selector('#toast-container')
     within('#toast-container') do
       expect(page).to have_text("Role can't be blank")
     end

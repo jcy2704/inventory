@@ -18,6 +18,6 @@ module ApplicationHelper
   end
 
   def back_btn
-    link_to '< Back', :back, class: 'back' if logged_in?
+    link_to icon('fas', 'chevron-left'), :back, class: 'back' if logged_in?
   end
 end
