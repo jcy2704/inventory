@@ -2,10 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+.title-section {
+  font-family: 'PNovaB';
+  color: #434b54;
+  margin-bottom: 25px;
+}
+
 .sub-title {
   font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.1em;
-  color: #434b54;
 }
 
 .sale-details {

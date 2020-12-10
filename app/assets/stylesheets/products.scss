@@ -97,53 +97,6 @@ input[type=number]::-webkit-outer-spin-button.upc {
   }
 }
 
-.edit-group-btn {
-  text-align: center;
-  width: 100px;
-  padding: 0.4rem 0.6rem;
-  color: white;
-  background: linear-gradient(#5fb523, #549e1f);
-  margin: 0 0 0 auto;
-  border-radius: 3px;
-  margin-bottom: 25px;
-  a {
-    display: inline-block;
-    width: 100%;
-  }
-}
-
-.all-products {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
-
-  .delete-product {
-    padding: 0.4rem 0.6rem;
-    color: white;
-    background: linear-gradient(#5fb523, #549e1f);
-    border-radius: 15px;
-    cursor: pointer;
-
-    a {
-      display: inline-block;
-      width: 100%;
-    }
-  }
-
-  .delete-product {
-    background: linear-gradient(rgb(223, 18, 18), rgb(197, 3, 3));
-  }
-
-  .product-btns {
-    width: 250px;
-    justify-content: space-between;
-  }
-
-  .empty {
-    justify-content: flex-end;
-  }
-}
-
 .center {
   font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1.2em;

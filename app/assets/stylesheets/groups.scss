@@ -2,9 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.group-btns {
-  width: 220px;
-  justify-content: space-between;
+.edit-group-btn {
+  text-align: center;
+  width: 100px;
+  padding: 0.4rem 0.6rem;
+  color: white;
+  background: linear-gradient(#5fb523, #549e1f);
+  margin: 0 0 0 auto;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  a {
+    display: inline-block;
+    width: 100%;
+  }
 }
 
 .g-card {

@@ -1,37 +1,40 @@
-<div class="all-users">
-  <h1 class="title">Cart</h1>
-
-  <%= empty_cart(@cart) %>
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title">Cart</h1>
+  </div>
 </div>
 
-<ul class="cart-cards">
-  <% @cart.line_items.includes(:product).each do |item| %>
-    <li class="card">
-      <div class="flex cart-card">
-        <div class="flex">
-          <div class="left-deat flex">
-            <%= content_tag(:h3, item.product.name, class: 'title') %>
-            <%= content_tag(:p, "Group: #{item.product.group.name}") %>
-            <%= upc_nil(item.product) %>
-          </div>
-          <div class="c-deat right-deat flex ">
-            <%= content_tag(:p, "Price: #{number_to_currency(item.product.price)}") %>
-            <div>
-              QTY:
-              <%= link_to "-", reduce_line_item_path(id: item), method: :post %>
-              <%= item.quantity %>
-              <%= link_to "+", add_line_item_path(id: item), method: :post %>
+<div class="main">
+  <%= empty_cart(@cart) %>
+
+  <ul class="cart-cards">
+    <% @cart.line_items.includes(:product).each do |item| %>
+      <li class="card">
+        <div class="flex cart-card">
+          <div class="flex">
+            <div class="left-deat flex">
+              <%= content_tag(:h3, item.product.name, class: 'title') %>
+              <%= content_tag(:p, "Group: #{item.product.group.name}") %>
+              <%= upc_nil(item.product) %>
+            </div>
+            <div class="c-deat right-deat flex ">
+              <%= content_tag(:p, "Price: #{number_to_currency(item.product.price)}") %>
+              <div>
+                QTY:
+                <%= link_to "-", reduce_line_item_path(id: item), method: :post %>
+                <%= item.quantity %>
+                <%= link_to "+", add_line_item_path(id: item), method: :post %>
+              </div>
             </div>
           </div>
+          <div class="product-btn">
+            <%= button_to "Remove Product", line_item_path(item), method: :delete %>
+            Total Price: <%= number_to_currency(item.total_price) %>
+          </div>
         </div>
-        <div class="product-btn">
-          <%= button_to "Remove Product", line_item_path(item), method: :delete %>
-          Total Price: <%= number_to_currency(item.total_price) %>
-        </div>
-      </div>
-    </li>
-  <% end %>
-</ul>
+      </li>
+    <% end %>
+  </ul>
 
-
-<%= footer_cart(@cart) %>
+  <%= footer_cart(@cart) %>
+</div>

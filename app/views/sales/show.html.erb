@@ -1,28 +1,35 @@
-<div class="all-users">
-  <div>
-    <h1 class="title">Sale Nº <%= @sale.id %></h1>
-    <h3 class="sub-title">Sold by <%= @sale.seller.username.capitalize %></h3>
-    <%= link_to '< Back', :back, class: 'back' %>
+<div class="top">
+  <div class="title-cont back-btn">
+    <%= back_btn %>
   </div>
 </div>
 
-<ul class="sale-card">
-  <% @sale.line_items.includes(:product).each do |item| %>
-    <li class="card">
-      <div class="flex sale-details">
-        <%= group_icon(item.product.group, 'icon') %>
-        <div class="sale-left-deat">
-          <%= content_tag(:h3, item.product.name, class: 'title') %>
-          Group: <%= item.product.group.name %>
-        </div>
-        <div class="sale-right-deat flex">
-          <%= content_tag(:p, "Price Per Unit: #{number_to_currency(item.product.price)}") %>
-          <%= content_tag(:p, "QTY: #{item.quantity}") %>
-          <%= content_tag(:p, "Total Sale: #{number_to_currency(item.total_price)}") %>
-        </div>
-      </div>
-    </li>
-  <% end %>
-</ul>
+<div class="main">
+  <div class="title-section">
+    <div>
+      <h1 class="title">Sale Nº <%= @sale.id %></h1>
+      <h3 class="sub-title">Sold by <%= @sale.seller.username.capitalize %></h3>
+    </div>
+  </div>
 
-<h3 class="text-right">Total Sale: <%= number_to_currency(total_sale(@sale)) %></h3>
+  <ul class="sale-card">
+    <% @sale.line_items.includes(:product).each do |item| %>
+      <li class="card">
+        <div class="flex sale-details">
+          <%= group_icon(item.product.group, 'icon') %>
+          <div class="sale-left-deat">
+            <%= content_tag(:h3, item.product.name, class: 'title') %>
+            Group: <%= item.product.group.name %>
+          </div>
+          <div class="sale-right-deat flex">
+            <%= content_tag(:p, "Price Per Unit: #{number_to_currency(item.product.price)}") %>
+            <%= content_tag(:p, "QTY: #{item.quantity}") %>
+            <%= content_tag(:p, "Total Sale: #{number_to_currency(item.total_price)}") %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  
+  <h3 class="text-right">Total Sale: <%= number_to_currency(total_sale(@sale)) %></h3>
+</div>
