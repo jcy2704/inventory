@@ -1,8 +1,4 @@
 module GroupsHelper
-  def group_params
-    params.require(:group).permit(:name, :icon, :user_id)
-  end
-
   def group_icon(group, class_name)
     if group.icon.attached?
       image_tag group.icon, class: class_name
@@ -15,5 +11,11 @@ module GroupsHelper
     return unless group.icon.attached? && !group.icon.id.nil?
 
     link_to 'Remove', remove_icon_path(group.icon.id), method: :delete
+  end
+
+  private
+
+  def group_params
+    params.require(:group).permit(:name, :icon, :user_id)
   end
 end

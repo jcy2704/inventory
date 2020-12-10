@@ -7,10 +7,6 @@ module ApplicationHelper
     end
   end
 
-  def errors_s(entity)
-    entity.errors.full_messages.each(&:to_s)
-  end
-
   def only_admins
     return unless session[:current_user] && current_user.admin?
 
@@ -19,5 +15,11 @@ module ApplicationHelper
 
   def back_btn
     link_to icon('fas', 'chevron-left'), :back, class: 'back' if logged_in?
+  end
+
+  private
+
+  def errors_s(entity)
+    entity.errors.full_messages.each(&:to_s)
   end
 end

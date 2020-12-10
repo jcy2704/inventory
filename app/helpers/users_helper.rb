@@ -1,13 +1,4 @@
 module UsersHelper
-  def new_current_user(user)
-    session[:current_user] = User.find(user.id)
-    session[:current_user]
-  end
-
-  def user_params
-    params.require(:user).permit(:username, :role, :avatar)
-  end
-
   def users_avatars(user, class_name)
     if user.avatar.attached?
       image_tag user.avatar, class: class_name
@@ -46,5 +37,16 @@ module UsersHelper
 
     (user.label :avatar, 'Avatar', class: 'label') +
       (user.file_field :avatar, class: 'avatar-field')
+  end
+
+  private
+
+  def new_current_user(user)
+    session[:current_user] = User.find(user.id)
+    session[:current_user]
+  end
+
+  def user_params
+    params.require(:user).permit(:username, :role, :avatar)
   end
 end

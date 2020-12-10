@@ -1,8 +1,4 @@
 module SaleGroupsHelper
-  def sale_g_params
-    params.require(:sale_group).permit(:name, :icon, :user_id)
-  end
-
   def sale_group_icon_remove(group)
     return unless group.icon.attached? && !group.icon.id.nil?
 
@@ -30,5 +26,9 @@ module SaleGroupsHelper
     else
       sale.group
     end
+  end
+
+  def sale_g_params
+    params.require(:sale_group).permit(:name, :icon, :user_id)
   end
 end

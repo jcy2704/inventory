@@ -1,8 +1,4 @@
 module ProductsHelper
-  def product_params
-    params.require(:product).permit(:name, :price, :quantity, :upc, :group_id)
-  end
-
   def options(product)
     if product.quantity.zero?
       link_to 'OUT OF STOCK', edit_product_path(product.id), class: 'out-stock'
@@ -45,5 +41,11 @@ module ProductsHelper
         ),
         include_blank: ''
       )
+  end
+
+  private
+
+  def product_params
+    params.require(:product).permit(:name, :price, :quantity, :upc, :group_id)
   end
 end
