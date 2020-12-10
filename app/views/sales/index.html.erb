@@ -9,32 +9,5 @@
 </div>
 
 <div class="main">
-  <ul class="sales-cards">
-    <% @sales.each do |s| %>
-      <li class="card">
-        <a class="flex" href=<%= sale_path(s.id) %>>
-          <ul class="left-deat">
-            <li class="title">
-              Sale Nº <%= s.id %>
-            </li>
-            <li>
-              Sold by <%= s.seller.username.capitalize %>
-            </li>
-            <li>
-              Sale Made at <%= s.created_at.localtime.strftime('%d/%m/%Y %H:%M') %>
-            </li>
-          </ul>
-
-          <ul class="center flex">
-            <li>
-              Products Sold: <%= total_products(s) %>
-            </li>
-            <li>
-              Total Sale: <%= number_to_currency(total_sale(s)) %>
-            </li>
-          </ul>
-        </a>
-      </li>
-    <% end %>
-  </ul>
+  <%= render 'sale_cards' %>
 </div>

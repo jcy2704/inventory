@@ -3,7 +3,7 @@ class SaleGroupsController < ApplicationController
   include ApplicationHelper
 
   def index
-    @sale_groups = SaleGroup.order(name: :asc)
+    @sale_groups = SaleGroup.order(name: :asc).includes(:icon_attachment, :creator)
   end
 
   def new

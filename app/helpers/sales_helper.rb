@@ -15,9 +15,11 @@ module SalesHelper
     total
   end
 
-  def group_icon(group, class_name)
-    if group.icon.attached?
-      image_tag group.icon, class: class_name
+  def sale_group_icon(sale, class_name)
+    if sale.sale_groups.first.nil?
+      image_tag 'category.svg', class: class_name
+    elsif sale.sale_groups.first.icon.attached?
+      image_tag sale.sale_groups.first.icon, class: class_name
     else
       image_tag 'category.svg', class: class_name
     end
