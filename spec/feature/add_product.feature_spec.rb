@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Add User', type: :feature do
+RSpec.describe 'Add Product', type: :feature do
   before :each do
     user = User.create(username: 'user', role: 'admin')
     User.create(username: 'employee', role: 'employee')

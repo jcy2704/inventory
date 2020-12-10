@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-RSpec.describe 'Add Group', type: :feature do
+RSpec.describe 'Add Sale Group', type: :feature do
   before :each do
     user = User.create(username: 'user', role: 'admin')
     User.create(username: 'employee', role: 'employee')
-    Group.create(name: 'test', user_id: user.id)
+    SaleGroup.create(name: 'test', user_id: user.id)
     visit '/login'
     within('.login-form') do
       fill_in 'Username', with: 'user'
@@ -12,33 +12,33 @@ RSpec.describe 'Add Group', type: :feature do
     click_button 'Login'
   end
 
-  it 'render add group form' do
-    visit '/groups'
-    click_link 'Create Group'
+  it 'render add sale group form' do
+    visit '/sale_groups'
+    click_link 'Create Sale Group'
 
-    expect(current_path).to eq(new_group_path)
+    expect(current_path).to eq(new_sale_group_path)
   end
 
-  it 'create new group' do
-    visit '/groups'
-    click_link 'Create Group'
+  it 'create new sale group' do
+    visit '/sale_groups'
+    click_link 'Create Sale Group'
 
     within('.new_group') do
       fill_in 'Name', with: 'Group'
     end
-    click_button 'Create Group'
+    click_button 'Create Sale group'
 
-    expect(current_path).to eq(groups_path)
+    expect(current_path).to eq(sale_groups_path)
   end
 
-  scenario 'raise error if group exists', js: true do
-    visit '/groups'
-    click_link 'Create Group'
+  scenario 'raise error if sale group exists', js: true do
+    visit '/sale_groups'
+    click_link 'Create Sale Group'
 
     within('.new_group') do
       fill_in 'Name', with: 'test'
     end
-    click_button 'Create Group'
+    click_button 'Create Sale group'
 
     expect(page).to have_selector('#toast-container')
     within('#toast-container') do
@@ -47,13 +47,13 @@ RSpec.describe 'Add Group', type: :feature do
   end
 
   scenario 'raise error if field empty', js: true do
-    visit '/groups'
-    click_link 'Create Group'
+    visit '/sale_groups'
+    click_link 'Create Sale Group'
 
     within('.new_group') do
       fill_in 'Name', with: ''
     end
-    click_button 'Create Group'
+    click_button 'Create Sale group'
 
     expect(page).to have_selector('#toast-container')
     within('#toast-container') do
