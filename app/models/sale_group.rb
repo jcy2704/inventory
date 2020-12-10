@@ -1,0 +1,2 @@
+class SaleGroup < ApplicationRecord
+end
