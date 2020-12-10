@@ -36,7 +36,7 @@ module ProductsHelper
       product.select(
         :group_id,
         options_for_select(
-          Group.all.collect { |group| [group.name, group.id] },
+          Group.all.collect { |group| [group.name.capitalize, group.id] },
           product_group_nil(@product)
         ),
         include_blank: ''
