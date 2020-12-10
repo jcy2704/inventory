@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Register', type: :feature do
   before :each do
     User.create(username: 'user', role: 'admin')
-    visit '/new_user'
+    visit '/users/new'
   end
 
   it 'register with user' do
