@@ -5,6 +5,7 @@
 </div>
 
 <div class="main card-list">
+  <%= group_empty(@groups) %>
   <ul class="group-cards">
     <% @groups.each do |g| %>
       <li class="card g-card">

@@ -3,7 +3,7 @@ module UsersHelper
     if user.avatar.attached?
       image_tag user.avatar, class: class_name
     else
-      image_tag 'default.jpg', class: class_name
+      image_tag 'default.svg', class: class_name
     end
   end
 
@@ -38,6 +38,15 @@ module UsersHelper
     (user.label :avatar, 'Avatar', class: 'label') +
       (user.file_field :avatar, class: 'avatar-field')
   end
+
+  def user_empty(users)
+    return unless users == []
+
+    '<div class="empty-center">'.html_safe +
+      (image_tag 'people.svg', class: 'empty-cart-img') +
+      '</div>'.html_safe
+  end
+
 
   private
 

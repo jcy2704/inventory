@@ -13,6 +13,14 @@ module GroupsHelper
     link_to 'Remove', remove_icon_path(group.icon.id), method: :delete
   end
 
+  def group_empty(group)
+    return unless group == []
+
+    '<div class="empty-center">'.html_safe +
+      (image_tag 'empty_house.svg', class: 'empty-cart-img') +
+      '</div>'.html_safe
+  end
+
   private
 
   def group_params

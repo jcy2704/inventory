@@ -18,6 +18,17 @@
   cursor: pointer;
 }
 
+.empty-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+
+  .empty-cart-img {
+    width: 430px;
+  }
+}
+
 .cart-card {
   padding: 20px;
   justify-content: space-between;

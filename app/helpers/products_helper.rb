@@ -43,6 +43,14 @@ module ProductsHelper
       )
   end
 
+  def product_empty(products)
+    return unless products == []
+
+    '<div class="empty-center">'.html_safe +
+      (image_tag 'empty_box.svg', class: 'empty-cart-img') +
+      '</div>'.html_safe
+  end
+
   private
 
   def product_params

@@ -40,4 +40,12 @@ module SalesHelper
       sale.sale_groups.first.name.titleize +
       '</li>'.html_safe
   end
+
+  def sale_empty(sales)
+    return unless sales == []
+
+    '<div class="empty-center">'.html_safe +
+      (image_tag 'empty_data.svg', class: 'empty-cart-img') +
+      '</div>'.html_safe
+  end
 end

@@ -5,6 +5,7 @@
 </div>
 
 <div class="main card-list">
+  <%= user_empty(not_current_user(@users)) %>
   <ul class="user-cards">
     <% not_current_user(@users).each do |u| %>
       <li class="card g-card">

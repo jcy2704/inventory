@@ -3,7 +3,7 @@ module ApplicationHelper
     if current_user.avatar.attached?
       image_tag current_user.avatar, class: 'avatar'
     else
-      image_tag 'default.jpg', class: 'avatar'
+      image_tag 'default.svg', class: 'avatar'
     end
   end
 
