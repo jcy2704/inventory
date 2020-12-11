@@ -1,0 +1,9 @@
+<%= form_for @user, html: { class: 'register-form' } do |f| %>
+  <%= users_avatars(@user, 'avatar-big') %>
+  <%= remove_avatar_btn(@user) %>
+  <%= f.label :username, 'Username', class: 'label' %>
+  <%= f.text_field :username, class: 'username' %>
+  <%= role_form(f) %>
+  <%= avatar_form(f) %>
+  <%= f.submit %>
+<% end %>

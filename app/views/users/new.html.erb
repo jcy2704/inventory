@@ -1,0 +1,14 @@
+<% if logged_in? %>
+<div class="top">
+  <div class="title-cont back-btn">
+    <%= back_btn %>
+  </div>
+</div>
+<% end %>
+<div class="main">
+  <div class="form">
+    <%= new_user %>
+
+    <%= render 'user_form' %>
+  </div>
+</div>

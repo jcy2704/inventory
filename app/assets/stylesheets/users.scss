@@ -1,0 +1,184 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 270px;
+  margin: 50px auto 0;
+}
+
+.label {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+
+.add-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 18.03vw;
+  background: #5fb523;
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2em;
+  text-transform: uppercase;
+  color: white;
+  border-top: 1px solid rgba(128, 128, 128, 0.356);
+  padding: 20px;
+
+  a {
+    padding: 15px;
+    display: block;
+    border: 1px solid white;
+    text-align: center;
+    width: 100%;
+    border-radius: 3px;
+  }
+}
+
+.login-form {
+  @extend .form;
+
+  width: 100%;
+  margin-top: 20px;
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+  .avatar-big {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 30px;
+  }
+
+  .username {
+    margin-bottom: 20px;
+    height: 34px;
+  }
+
+  .login-btn {
+    background: linear-gradient(#3778c2, #2d619d);
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+  }
+
+  .register-btn {
+    text-align: center;
+    color: white;
+    padding: 0.5rem;
+    background: linear-gradient(#5fb523, #549e1f);
+    border-radius: 3px;
+    cursor: pointer;
+
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+  }
+}
+
+.register-form {
+  @extend .login-form;
+
+  margin-top: 20px;
+
+  #user_role,
+  .avatar-field {
+    @extend .username;
+  }
+
+  input[type=submit] {
+    @extend .login-btn;
+
+    background: linear-gradient(#5fb523, #549e1f);
+  }
+}
+
+.new_product {
+  @extend .login-form;
+
+  .name,
+  .price,
+  .quantity,
+  .upc {
+    @extend .username;
+  }
+
+  input[type=submit] {
+    @extend .login-btn;
+
+    background: linear-gradient(#5fb523, #549e1f);
+  }
+}
+
+.new_group {
+  @extend .new_product;
+  @extend .register-form;
+}
+
+.create-group {
+  text-align: right;
+  margin: 10px 0 20px;
+}
+
+.avatar-show,
+.icon {
+  border-radius: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.avatar-show {
+  border-radius: 100%;
+}
+
+.icon-big {
+  border-radius: 0%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+}
+
+.top {
+  position: sticky;
+  top: 0;
+
+  .revenue {
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    padding: 20px;
+    font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.1em;
+    box-shadow: 0 0 2px 1px rgba(128, 128, 128, 0.37);
+
+    .total-rev {
+      font-family: 'PNovaB', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+  }
+}
+
+.title-cont {
+  background: linear-gradient(#3778c2, #2d619d);
+  padding: 20px;
+  color: white;
+  text-align: center;
+
+  .title {
+    font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+  }
+}
+
+.back-btn {
+  text-align: left;
+  padding-left: 0;
+
+  .back {
+    padding: 25px;
+  }
+}

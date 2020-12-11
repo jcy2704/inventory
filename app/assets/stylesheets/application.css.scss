@@ -1,0 +1,121 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require toastr
+ */
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f6f8;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+aside {
+  position: sticky;
+  top: 0;
+  width: 22vw;
+  height: 100vh;
+}
+
+main {
+  width: 100%;
+}
+
+.logout {
+  width: 100vw;
+}
+
+.nav-aside {
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 1.35em;
+  text-align: center;
+  padding: 100px 20px 20px;
+  height: 100%;
+  background: linear-gradient(#3778c2, #2d619d 9%);
+  position: sticky;
+}
+
+.nav-aside li {
+  padding: 15px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  background: linear-gradient(#3778c2, #2d619d);
+}
+
+.profile-a {
+  flex-direction: column;
+}
+
+.logout-btn {
+  font-size: 0.8em;
+}
+
+.username {
+  font-family: 'PNovaB', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin: 10px 0;
+}
+
+.nav-logout {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  align-items: center;
+}
+
+.nav-logout a {
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: white;
+  font-size: 1.2em;
+}
+
+.main-nav {
+  text-align: left;
+  padding: 10px 20px;
+}
+
+.avatar {
+  border-radius: 100%;
+  width: 150px;
+  height: 150px;
+}
+
+.main {
+  padding: 25px;
+}
+
+.card-list {
+  padding-bottom: 105px;
+}
+
+.profile {
+  padding-right: 20px;
+}

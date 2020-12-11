@@ -1,0 +1,30 @@
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title"><%= icon('fas', 'layer-group') %> All Groups</h1>
+  </div>
+</div>
+
+<div class="main card-list">
+  <%= group_empty(@groups) %>
+  <ul class="group-cards">
+    <% @groups.each do |g| %>
+      <li class="card g-card">
+        <a href=<%= group_path(g.id) %>>
+          <div class="flex">
+            <%= group_icon(g, 'icon') %>
+            <div class='details'>
+              <%= content_tag(:h3, g.name.titleize, class: 'title') %>
+              <%= content_tag(:p, "Products: #{g.products.count}", class: 'deat') %>
+              <%= content_tag(:p, "Organizer: #{g.organizer.username.titleize}", class: 'deat') %>
+              <%= content_tag(:p, "Created at #{g.created_at.localtime.strftime('%d/%m/%Y %H:%M')}") %>
+            </div>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="add-btn">
+  <%= link_to 'Create Group', new_group_path %>
+</div>

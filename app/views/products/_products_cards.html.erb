@@ -1,0 +1,23 @@
+<ul class="products-cards">
+  <% @products.each do |p| %>
+    <li class="card">
+      <div class="flex">
+        <a class="flex" href=<%= edit_product_path(p.id) %>>
+          <div class="left-deat">
+            <%= content_tag(:h3, p.name.titleize, class: 'title') %>
+            <%= content_tag(:p, "Group: #{p.group.name.titleize}") %>
+            <%= upc_nil(p) %>
+          </div>
+          <div class="right-deat flex">
+            <%= content_tag(:p, "Price: #{number_to_currency(p.price)}", class: 'deat') %>
+            <%= content_tag(:p, "QTY: #{p.quantity}", class: 'deat') %>
+            <%= content_tag(:p, "Sales: #{total_sales(p)}", class: 'deat') %>
+          </div>
+        </a>
+        <div class="product-btn add-to">
+          <%= options(p) %>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

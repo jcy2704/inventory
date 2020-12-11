@@ -1,0 +1,15 @@
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title"><%= icon('fas', 'cubes') %> All Products</h1>
+  </div>
+</div>
+
+<div class="main">
+  <%= product_empty(@products) %>
+
+  <%= render partial: 'products_cards' %>
+</div>
+
+<div class="add-btn">
+  <%= link_to 'Add Product', new_product_path %>
+</div>

@@ -1,0 +1,61 @@
+example_id                                         | status | run_time        |
+-------------------------------------------------- | ------ | --------------- |
+./spec/feature/add _group_feature_spec.rb[1:1]     | passed | 0.35693 seconds |
+./spec/feature/add _group_feature_spec.rb[1:2]     | passed | 0.40384 seconds |
+./spec/feature/add _group_feature_spec.rb[1:3]     | passed | 1.37 seconds    |
+./spec/feature/add _group_feature_spec.rb[1:4]     | passed | 1.65 seconds    |
+./spec/feature/add_product.feature_spec.rb[1:1]    | passed | 0.29762 seconds |
+./spec/feature/add_product.feature_spec.rb[1:2]    | passed | 0.44038 seconds |
+./spec/feature/add_product.feature_spec.rb[1:3]    | passed | 1.76 seconds    |
+./spec/feature/add_product.feature_spec.rb[1:4]    | passed | 1.46 seconds    |
+./spec/feature/add_sale_group_feature_spec.rb[1:1] | passed | 0.2889 seconds  |
+./spec/feature/add_sale_group_feature_spec.rb[1:2] | passed | 0.4073 seconds  |
+./spec/feature/add_sale_group_feature_spec.rb[1:3] | passed | 1.48 seconds    |
+./spec/feature/add_sale_group_feature_spec.rb[1:4] | passed | 1.56 seconds    |
+./spec/feature/add_user_feature_spec.rb[1:1]       | passed | 0.30133 seconds |
+./spec/feature/add_user_feature_spec.rb[1:2]       | passed | 0.42362 seconds |
+./spec/feature/add_user_feature_spec.rb[1:3]       | passed | 1.38 seconds    |
+./spec/feature/add_user_feature_spec.rb[1:4]       | passed | 1.35 seconds    |
+./spec/feature/add_user_feature_spec.rb[1:5]       | passed | 1.61 seconds    |
+./spec/feature/add_user_feature_spec.rb[1:6]       | passed | 0.44613 seconds |
+./spec/feature/cart_and_sales_feature_spec.rb[1:1] | passed | 2.29 seconds    |
+./spec/feature/cart_and_sales_feature_spec.rb[1:2] | passed | 0.55502 seconds |
+./spec/feature/cart_and_sales_feature_spec.rb[1:3] | passed | 0.51838 seconds |
+./spec/feature/login_feature_spec.rb[1:1]          | passed | 0.14579 seconds |
+./spec/feature/login_feature_spec.rb[1:2]          | passed | 0.75676 seconds |
+./spec/feature/login_feature_spec.rb[1:3]          | passed | 0.69029 seconds |
+./spec/feature/register_feature_spec.rb[1:1]       | passed | 0.17903 seconds |
+./spec/feature/register_feature_spec.rb[1:2]       | passed | 0.59989 seconds |
+./spec/feature/register_feature_spec.rb[1:3]       | passed | 4.42 seconds    |
+./spec/feature/register_feature_spec.rb[1:4]       | passed | 1.06 seconds    |
+./spec/feature/roles_feature_spec.rb[1:1]          | passed | 0.22346 seconds |
+./spec/feature/roles_feature_spec.rb[1:2]          | passed | 0.20807 seconds |
+./spec/helpers/products_helper_spec.rb[1:1:1]      | passed | 0.00961 seconds |
+./spec/helpers/sales_helper_spec.rb[1:1:1]         | passed | 0.00997 seconds |
+./spec/helpers/sales_helper_spec.rb[1:2:1]         | passed | 0.00787 seconds |
+./spec/helpers/sales_helper_spec.rb[1:3:1]         | passed | 0.00816 seconds |
+./spec/models/cart_spec.rb[1:1]                    | passed | 0.00235 seconds |
+./spec/models/cart_spec.rb[1:2]                    | passed | 0.0031 seconds  |
+./spec/models/group_spec.rb[1:1]                   | passed | 0.02024 seconds |
+./spec/models/group_spec.rb[1:2]                   | passed | 0.00421 seconds |
+./spec/models/line_item_spec.rb[1:1]               | passed | 0.00638 seconds |
+./spec/models/line_item_spec.rb[1:2]               | passed | 0.00495 seconds |
+./spec/models/product_spec.rb[1:1]                 | passed | 0.02822 seconds |
+./spec/models/product_spec.rb[1:2]                 | passed | 0.02542 seconds |
+./spec/models/product_spec.rb[1:3]                 | passed | 0.05795 seconds |
+./spec/models/product_spec.rb[1:4]                 | passed | 0.03082 seconds |
+./spec/models/product_spec.rb[1:5]                 | passed | 0.04473 seconds |
+./spec/models/product_spec.rb[1:6]                 | passed | 0.02305 seconds |
+./spec/models/product_spec.rb[1:7]                 | passed | 0.02121 seconds |
+./spec/models/product_spec.rb[1:8]                 | passed | 0.01658 seconds |
+./spec/models/sale_group_spec.rb[1:1]              | passed | 0.01627 seconds |
+./spec/models/sale_group_spec.rb[1:2]              | passed | 0.01067 seconds |
+./spec/models/sale_group_spec.rb[1:3]              | passed | 0.0084 seconds  |
+./spec/models/sale_spec.rb[1:1]                    | passed | 0.00451 seconds |
+./spec/models/sale_spec.rb[1:2]                    | passed | 0.00214 seconds |
+./spec/models/user_spec.rb[1:1]                    | passed | 0.01394 seconds |
+./spec/models/user_spec.rb[1:2]                    | passed | 0.02386 seconds |
+./spec/models/user_spec.rb[1:3]                    | passed | 0.01053 seconds |
+./spec/models/user_spec.rb[1:4]                    | passed | 0.01578 seconds |
+./spec/models/user_spec.rb[1:5]                    | passed | 0.0189 seconds  |
+./spec/models/user_spec.rb[1:6]                    | passed | 0.00309 seconds |

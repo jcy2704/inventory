@@ -1,0 +1,8 @@
+<%= form_with model: @user, class: "login-form" do |f| %>
+  <%= f.label :username, class: "label" %>
+  <%= f.text_field :username, class: "username" %>
+  <%= f.submit 'Login', class: "login-btn" %>
+  <div class="register-btn">
+    <%= link_to  "Register", new_user_path %>
+  </div>
+<% end %>

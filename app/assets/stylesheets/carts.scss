@@ -1,0 +1,87 @@
+// Place all the styles related to the Carts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.cart-btn {
+  text-align: right;
+}
+
+.empty-cart {
+  background: linear-gradient(rgb(223, 18, 18), rgb(197, 3, 3));
+  border: 0;
+  padding: 0.4rem 0.6rem;
+  text-align: center;
+  color: white;
+  border-radius: 3px;
+  margin-bottom: 25px;
+  font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  cursor: pointer;
+}
+
+.empty-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+
+  .empty-cart-img {
+    width: 430px;
+  }
+}
+
+.cart-card {
+  padding: 20px;
+  justify-content: space-between;
+
+  .left-deat {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .c-deat {
+    margin-left: 30px;
+
+    p {
+      margin-right: 50px;
+    }
+  }
+
+  .product-btn {
+    font-family: 'PNovaL', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.15em;
+    flex-direction: column;
+
+    input[type=submit] {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.footer {
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 20px 20px;
+
+  .sub-total {
+    font-family: 'PNovaB', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #434b54;
+    text-align: center;
+  }
+
+  .sell-btn {
+    margin-top: 10px;
+
+    .button_to {
+      input[type=submit] {
+        border: 0;
+        text-align: center;
+        color: white;
+        padding: 0.5rem;
+        background: linear-gradient(#5fb523, #549e1f);
+        border-radius: 3px;
+        cursor: pointer;
+        width: 210px;
+      }
+    }
+  }
+}

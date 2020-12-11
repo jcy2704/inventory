@@ -1,0 +1,18 @@
+<div class="top">
+  <div class="title-cont">
+    <h1 class="title"><%= @group.name %> Products</h1>
+  </div>
+</div>
+
+
+<div class="main">
+  <div class="edit-group-btn">
+    <%= link_to 'Edit Group', edit_group_path, class: 'edit-group' %>
+  </div>
+
+  <%= render partial: 'products/products_cards' %>
+</div>
+
+<div class="add-btn">
+  <%= link_to 'Add Product', new_product_path %>
+</div>
