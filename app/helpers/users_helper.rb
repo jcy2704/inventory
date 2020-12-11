@@ -47,7 +47,6 @@ module UsersHelper
       '</div>'.html_safe
   end
 
-
   private
 
   def new_current_user(user)
