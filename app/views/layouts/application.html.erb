@@ -27,26 +27,26 @@
             <ul class="main-nav">
               <li>
                 <div>
-                  <%= icon('fas', 'shopping-cart') %> <%= link_to 'Cart', cart_path(@current_cart), class: 'cart' %>
+                  <%= link_to "#{icon('fas', 'shopping-cart')} Cart".html_safe, cart_path(@current_cart), class: 'cart' %>
                 </div>
               </li>
               <li>
-                <%= icon('fas', 'piggy-bank') %> <%= link_to 'Sales', sales_path %>
+                <%= link_to "#{icon('fas', 'piggy-bank')} Sales".html_safe, sales_path %>
               </li>
               <li>
-                <%= icon('fas', 'layer-group') %> <%= link_to 'Sale Groups', sale_groups_path %>
+                <%= link_to "#{icon('fas', 'layer-group')} Sale Groups".html_safe, sale_groups_path %>
               </li>
               <li>
-                <%= icon('fas', 'dollar-sign') %> <%= link_to 'Individual Sales', individual_sales_path %>
+                <%= link_to "#{icon('fas', 'dollar-sign')} Individual Sales".html_safe, individual_sales_path %>
               </li>
               <li>
-                <%= icon('fas', 'cubes') %> <%= link_to 'Products', products_path %>
+                <%= link_to "#{icon('fas', 'cubes')} Products".html_safe, products_path %>
               </li>
               <li>
-                <%= icon('fas', 'layer-group') %> <%= link_to 'Groups', groups_path %>
+                <%= link_to "#{icon('fas', 'layer-group')} Groups".html_safe, groups_path %>
               </li>
               <li>
-                <%= icon('fas', 'users') %> <%= only_admins %>
+                <%= only_admins %>
               </li>
             </ul>
           </ul>

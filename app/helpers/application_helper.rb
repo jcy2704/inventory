@@ -10,7 +10,7 @@ module ApplicationHelper
   def only_admins
     return unless session[:current_user] && current_user.admin?
 
-    link_to 'All Users', users_path
+    link_to "#{icon('fas', 'users')} All Users".html_safe, users_path
   end
 
   def back_btn
