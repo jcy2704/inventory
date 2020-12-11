@@ -10,7 +10,7 @@
   <strong>Project created by Steven Jack Chung</strong>
   <br>
   Project created based on Ruby On Rails Capstone.<br>
-  Design Idea by <a href="https://www.behance.net/gregoirevella">Gregoire Vella on Behance</a>
+  Design Idea by <a href="https://www.behance.net/gregoirevella">Gregoire Vella</a> on Behance
 </p>
 
 <p align="center">
@@ -179,3 +179,13 @@ Feel free to check the [issues page](https://github.com/jcy2704/inventory/issues
 ## Show your support
 
 Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to Gregoire Vella in their desgin for Snapscan
+
+## 📝 Credits and Licenses
+
+This work "Inventory Transactions", is a derivative of "[Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=)" by [Gregoire Vella](https://www.behance.net/gregoirevella), used under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+
+"Inventory Transactions" is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) by Steven Jack Chung.
