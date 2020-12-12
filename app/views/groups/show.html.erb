@@ -1,15 +1,11 @@
 <div class="top">
-  <div class="title-cont">
-    <h1 class="title"><%= @group.name %> Products</h1>
+  <div class="title-cont groups-conf">
+    <h1 class="title"><%= @group.name %> Products<%= link_to icon('fas', 'cog'), edit_sale_group_path, class: 'edit-group' %></h1>
   </div>
 </div>
 
 
 <div class="main">
-  <div class="edit-group-btn">
-    <%= link_to 'Edit Group', edit_group_path, class: 'edit-group' %>
-  </div>
-
   <%= render partial: 'products/products_cards' %>
 </div>
 

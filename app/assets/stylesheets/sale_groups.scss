@@ -1,3 +1,14 @@
 // Place all the styles related to the sale_groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.groups-conf {
+  position: relative;
+
+  a {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 1em;
+  }
+}
