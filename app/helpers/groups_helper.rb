@@ -21,6 +21,10 @@ module GroupsHelper
       '</div>'.html_safe
   end
 
+  def cog
+    link_to icon('fas', 'cog'), edit_sale_group_path, class: 'edit-group'
+  end
+
   private
 
   def group_params
