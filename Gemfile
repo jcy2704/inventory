@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.2'
+ruby '2.7.0'
 
 gem 'activestorage-validator'
 
 gem 'allow_numeric'
 
-gem 'aws-sdk-s3', require: false
+gem 'activestorage-database-service', github: 'TitovDigital/activestorage-database-service'
 
 gem 'bullet', group: 'development'
 
