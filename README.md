@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://github.com/jcy2704/oop-ruby">
-    <img src="https://res.cloudinary.com/growsurf-prod/image/upload/v1582211139/production/gnysw2objzekbagrqiax.png" alt="Logo" width="350" height="70">
-  </a>
-</p>
+
 
 <h1 align="center">Inventory Transactions</h1>
 
